@@ -1,0 +1,172 @@
+.card {
+  &.crab {
+    --scroll-base: #{$crab-scroll-base};
+    --scroll-secondary: #{$crab-scroll-secondary};
+    --scroll-highlight: #{$crab-scroll-highlight};
+    --scroll-shade-1: #{$crab-scroll-shade-1};
+    --scroll-shade-2: #{$crab-scroll-shade-2};
+    --scroll-shade-3: #{$crab-scroll-shade-3};
+    --scroll-shade-4: #{$crab-scroll-shade-4};
+    --scroll-shade-5: #{$crab-scroll-shade-5};
+    --scroll-shade-6: #{$crab-scroll-shade-6};
+    --scroll-shade-rgb: #{$crab-scroll-shade-rgb};
+
+    --underlay-base: #{$crab-underlay-base};
+    --underlay-secondary: #{$crab-underlay-secondary};
+    --underlay-highlight: #{$crab-underlay-highlight};
+    --underlay-shade-1: #{$crab-underlay-shade-1};
+    --underlay-shade-2: #{$crab-underlay-shade-2};
+  }
+
+  &.crane {
+    --scroll-base: #{$crane-scroll-base};
+    --scroll-secondary: #{$crane-scroll-secondary};
+    --scroll-highlight: #{$crane-scroll-highlight};
+    --scroll-shade-1: #{$crane-scroll-shade-1};
+    --scroll-shade-2: #{$crane-scroll-shade-2};
+    --scroll-shade-3: #{$crane-scroll-shade-3};
+    --scroll-shade-4: #{$crane-scroll-shade-4};
+    --scroll-shade-5: #{$crane-scroll-shade-5};
+    --scroll-shade-6: #{$crane-scroll-shade-6};
+    --scroll-shade-rgb: #{$crane-scroll-shade-rgb};
+
+    --underlay-base: #{$crane-underlay-base};
+    --underlay-secondary: #{$crane-underlay-secondary};
+    --underlay-highlight: #{$crane-underlay-highlight};
+    --underlay-shade-1: #{$crane-underlay-shade-1};
+    --underlay-shade-2: #{$crane-underlay-shade-2};
+  }
+
+  &.dragon {
+    --scroll-base: #{$dragon-scroll-base};
+    --scroll-secondary: #{$dragon-scroll-secondary};
+    --scroll-highlight: #{$dragon-scroll-highlight};
+    --scroll-shade-1: #{$dragon-scroll-shade-1};
+    --scroll-shade-2: #{$dragon-scroll-shade-2};
+    --scroll-shade-3: #{$dragon-scroll-shade-3};
+    --scroll-shade-4: #{$dragon-scroll-shade-4};
+    --scroll-shade-5: #{$dragon-scroll-shade-5};
+    --scroll-shade-6: #{$dragon-scroll-shade-6};
+    --scroll-shade-rgb: #{$dragon-scroll-shade-rgb};
+
+    --underlay-base: #{$dragon-underlay-base};
+    --underlay-secondary: #{$dragon-underlay-secondary};
+    --underlay-highlight: #{$dragon-underlay-highlight};
+    --underlay-shade-1: #{$dragon-underlay-shade-1};
+    --underlay-shade-2: #{$dragon-underlay-shade-2};
+  }
+
+  &.lion {
+    --scroll-base: #{$lion-scroll-base};
+    --scroll-secondary: #{$lion-scroll-secondary};
+    --scroll-highlight: #{$lion-scroll-highlight};
+    --scroll-shade-1: #{$lion-scroll-shade-1};
+    --scroll-shade-2: #{$lion-scroll-shade-2};
+    --scroll-shade-3: #{$lion-scroll-shade-3};
+    --scroll-shade-4: #{$lion-scroll-shade-4};
+    --scroll-shade-5: #{$lion-scroll-shade-5};
+    --scroll-shade-6: #{$lion-scroll-shade-6};
+    --scroll-shade-rgb: #{$lion-scroll-shade-rgb};
+
+    --underlay-base: #{$lion-underlay-base};
+    --underlay-secondary: #{$lion-underlay-secondary};
+    --underlay-highlight: #{$lion-underlay-highlight};
+    --underlay-shade-1: #{$lion-underlay-shade-1};
+    --underlay-shade-2: #{$lion-underlay-shade-2};
+  }
+
+  &.mantis {
+    --scroll-base: #{$mantis-scroll-base};
+    --scroll-secondary: #{$mantis-scroll-secondary};
+    --scroll-highlight: #{$mantis-scroll-highlight};
+    --scroll-shade-1: #{$mantis-scroll-shade-1};
+    --scroll-shade-2: #{$mantis-scroll-shade-2};
+    --scroll-shade-3: #{$mantis-scroll-shade-3};
+    --scroll-shade-4: #{$mantis-scroll-shade-4};
+    --scroll-shade-5: #{$mantis-scroll-shade-5};
+    --scroll-shade-6: #{$mantis-scroll-shade-6};
+    --scroll-shade-rgb: #{$mantis-scroll-shade-rgb};
+
+    --underlay-base: #{$mantis-underlay-base};
+    --underlay-secondary: #{$mantis-underlay-secondary};
+    --underlay-highlight: #{$mantis-underlay-highlight};
+    --underlay-shade-1: #{$mantis-underlay-shade-1};
+    --underlay-shade-2: #{$mantis-underlay-shade-2};
+  }
+
+  &.phoenix {
+    --scroll-base: #{$phoenix-scroll-base};
+    --scroll-secondary: #{$phoenix-scroll-secondary};
+    --scroll-highlight: #{$phoenix-scroll-highlight};
+    --scroll-shade-1: #{$phoenix-scroll-shade-1};
+    --scroll-shade-2: #{$phoenix-scroll-shade-2};
+    --scroll-shade-3: #{$phoenix-scroll-shade-3};
+    --scroll-shade-4: #{$phoenix-scroll-shade-4};
+    --scroll-shade-5: #{$phoenix-scroll-shade-5};
+    --scroll-shade-6: #{$phoenix-scroll-shade-6};
+    --scroll-shade-rgb: #{$phoenix-scroll-shade-rgb};
+
+    --underlay-base: #{$phoenix-underlay-base};
+    --underlay-secondary: #{$phoenix-underlay-secondary};
+    --underlay-highlight: #{$phoenix-underlay-highlight};
+    --underlay-shade-1: #{$phoenix-underlay-shade-1};
+    --underlay-shade-2: #{$phoenix-underlay-shade-2};
+  }
+
+  &.scorpion {
+    --scroll-base: #{$scorpion-scroll-base};
+    --scroll-secondary: #{$scorpion-scroll-secondary};
+    --scroll-highlight: #{$scorpion-scroll-highlight};
+    --scroll-shade-1: #{$scorpion-scroll-shade-1};
+    --scroll-shade-2: #{$scorpion-scroll-shade-2};
+    --scroll-shade-3: #{$scorpion-scroll-shade-3};
+    --scroll-shade-4: #{$scorpion-scroll-shade-4};
+    --scroll-shade-5: #{$scorpion-scroll-shade-5};
+    --scroll-shade-6: #{$scorpion-scroll-shade-6};
+    --scroll-shade-rgb: #{$scorpion-scroll-shade-rgb};
+
+    --underlay-base: #{$scorpion-underlay-base};
+    --underlay-secondary: #{$scorpion-underlay-secondary};
+    --underlay-highlight: #{$scorpion-underlay-highlight};
+    --underlay-shade-1: #{$scorpion-underlay-shade-1};
+    --underlay-shade-2: #{$scorpion-underlay-shade-2};
+  }
+
+  &.spider {
+    --scroll-base: #{$spider-scroll-base};
+    --scroll-secondary: #{$spider-scroll-secondary};
+    --scroll-highlight: #{$spider-scroll-highlight};
+    --scroll-shade-1: #{$spider-scroll-shade-1};
+    --scroll-shade-2: #{$spider-scroll-shade-2};
+    --scroll-shade-3: #{$spider-scroll-shade-3};
+    --scroll-shade-4: #{$spider-scroll-shade-4};
+    --scroll-shade-5: #{$spider-scroll-shade-5};
+    --scroll-shade-6: #{$spider-scroll-shade-6};
+    --scroll-shade-rgb: #{$spider-scroll-shade-rgb};
+
+    --underlay-base: #{$spider-underlay-base};
+    --underlay-secondary: #{$spider-underlay-secondary};
+    --underlay-highlight: #{$spider-underlay-highlight};
+    --underlay-shade-1: #{$spider-underlay-shade-1};
+    --underlay-shade-2: #{$spider-underlay-shade-2};
+  }
+
+  &.unicorn {
+    --scroll-base: #{$unicorn-scroll-base};
+    --scroll-secondary: #{$unicorn-scroll-secondary};
+    --scroll-highlight: #{$unicorn-scroll-highlight};
+    --scroll-shade-1: #{$unicorn-scroll-shade-1};
+    --scroll-shade-2: #{$unicorn-scroll-shade-2};
+    --scroll-shade-3: #{$unicorn-scroll-shade-3};
+    --scroll-shade-4: #{$unicorn-scroll-shade-4};
+    --scroll-shade-5: #{$unicorn-scroll-shade-5};
+    --scroll-shade-6: #{$unicorn-scroll-shade-6};
+    --scroll-shade-rgb: #{$unicorn-scroll-shade-rgb};
+
+    --underlay-base: #{$unicorn-underlay-base};
+    --underlay-secondary: #{$unicorn-underlay-secondary};
+    --underlay-highlight: #{$unicorn-underlay-highlight};
+    --underlay-shade-1: #{$unicorn-underlay-shade-1};
+    --underlay-shade-2: #{$unicorn-underlay-shade-2};
+  }
+}

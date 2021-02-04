@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Card from "./components/Card";
+// import InputForm from "./components/InputForm";
+import FormContainer from "./components/FormContainer";
 
 function App() {
+  const [cardState, setCardState] = useState({
+    name: "Lastname Firstname",
+    nameTitle: "",
+    clan: "unaligned",
+    experienced: false,
+    expLevel: "1",
+    titles: ["Title 1", "Title 2", "Title 3"],
+    keywords: ["Keyword", "Keyword", "Keyword"],
+    quote:
+      "Optional quote from this character that probably takes up a couple of lines and maybe, just maybe, a third one as well?",
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <h1 className="heading">Visual Layout Test</h1>
+      <Card cardState={cardState} />
+      {/* <InputForm cardState={cardState} setCardState={setCardState} /> */}
+      <section className="form-container">
+        <FormContainer cardState={cardState} setCardState={setCardState} />
+      </section>
+    </main>
   );
 }
 

@@ -1,0 +1,227 @@
+/*
+ * =========================
+ * ******** Colours ********
+ * =========================
+ */
+// scroll foil
+$foil-base: #eeda58;
+$foil-dark: #c2a83e;
+$foil-light: #f8f7f1;
+$foil-dull: #ae9f80;
+$foil-dull-dark: #897858;
+
+// scroll wraps
+$wraps-base: #2f2c31;
+$wraps-dark: #0f0f11;
+$wraps-light: #7d7786;
+
+/*
+ * ==========================
+ * ***** Clan Variables *****
+ * ==========================
+ */
+// scroll main & underlay * changes by clan, but follows same scheme *
+// $scroll-base: slategray; // original test colours
+// $scroll-highlight: whitesmoke; // original test colours
+// $underlay-base: gray; // original test colours
+// $underlay-highlight: lightgray; // original test colours
+$scroll-base: #885445;
+$scroll-secondary: #d4b3a0; // never used - keep for secondary?
+$scroll-highlight: lighten($scroll-base, 5%);
+$scroll-shade-1: darken($scroll-base, 10%);
+$scroll-shade-2: darken($scroll-base, 15%);
+$scroll-shade-3: darken($scroll-base, 20%);
+$scroll-shade-4: darken($scroll-base, 30%);
+$scroll-shade-5: darken($scroll-base, 40%);
+$scroll-shade-6: darken($scroll-base, 50%);
+$scroll-shade-rgb: red($scroll-shade-5), green($scroll-shade-5),
+  blue($scroll-shade-5);
+
+$underlay-base: #6e4a2c;
+$underlay-secondary: #b98c63;
+$underlay-highlight: lighten($underlay-secondary, 20%);
+$underlay-shade-1: darken($underlay-base, 20%);
+$underlay-shade-2: darken($underlay-base, 40%);
+
+// lighten($scroll-base, 5%) // replace with scroll-highlight?
+// darken($scroll-base, 10%)
+// darken($scroll-base, 15%)
+// darken($scroll-base, 20%)
+// darken($scroll-base, 30%)
+// darken($scroll-base, 40%)
+// darken($scroll-base, 50%)
+
+// lighten($underlay-highlight, 20%)
+// darken($underlay-base, 20%)
+// darken($underlay-base, 40%)
+
+// crab
+$crab-scroll-base: #2850a0;
+$crab-scroll-secondary: #73bbff;
+$crab-scroll-highlight: lighten($crab-scroll-base, 5%);
+$crab-scroll-shade-1: darken($crab-scroll-base, 10%);
+$crab-scroll-shade-2: darken($crab-scroll-base, 15%);
+$crab-scroll-shade-3: darken($crab-scroll-base, 20%);
+$crab-scroll-shade-4: darken($crab-scroll-base, 30%);
+$crab-scroll-shade-5: darken($crab-scroll-base, 40%);
+$crab-scroll-shade-6: darken($crab-scroll-base, 50%);
+$crab-scroll-shade-rgb: red($crab-scroll-shade-5), green($crab-scroll-shade-5),
+  blue($crab-scroll-shade-5);
+
+$crab-underlay-base: #43666b;
+$crab-underlay-secondary: #87a8b1;
+$crab-underlay-highlight: lighten($crab-underlay-secondary, 20%);
+$crab-underlay-shade-1: darken($crab-underlay-base, 20%);
+$crab-underlay-shade-2: darken($crab-underlay-base, 40%);
+
+// crane
+$crane-scroll-base: #7bc3da;
+$crane-scroll-secondary: #9ce7fd;
+$crane-scroll-highlight: lighten($crane-scroll-base, 5%);
+$crane-scroll-shade-1: darken($crane-scroll-base, 10%);
+$crane-scroll-shade-2: darken($crane-scroll-base, 15%);
+$crane-scroll-shade-3: darken($crane-scroll-base, 20%);
+$crane-scroll-shade-4: darken($crane-scroll-base, 30%);
+$crane-scroll-shade-5: darken($crane-scroll-base, 40%);
+$crane-scroll-shade-6: darken($crane-scroll-base, 50%);
+$crane-scroll-shade-rgb: red($crane-scroll-shade-5),
+  green($crane-scroll-shade-5), blue($crane-scroll-shade-5);
+
+$crane-underlay-base: #7395b6;
+$crane-underlay-secondary: #d0e4f4;
+$crane-underlay-highlight: lighten($crane-underlay-secondary, 20%);
+$crane-underlay-shade-1: darken($crane-underlay-base, 20%);
+$crane-underlay-shade-2: darken($crane-underlay-base, 40%);
+
+// dragon
+$dragon-scroll-base: #cccf1e;
+$dragon-scroll-secondary: #f8eb5d;
+$dragon-scroll-highlight: lighten($dragon-scroll-base, 5%);
+$dragon-scroll-shade-1: darken($dragon-scroll-base, 10%);
+$dragon-scroll-shade-2: darken($dragon-scroll-base, 15%);
+$dragon-scroll-shade-3: darken($dragon-scroll-base, 20%);
+$dragon-scroll-shade-4: darken($dragon-scroll-base, 30%);
+$dragon-scroll-shade-5: darken($dragon-scroll-base, 40%);
+$dragon-scroll-shade-6: darken($dragon-scroll-base, 50%);
+$dragon-scroll-shade-rgb: red($dragon-scroll-shade-5),
+  green($dragon-scroll-shade-5), blue($dragon-scroll-shade-5);
+
+$dragon-underlay-base: #517e46;
+$dragon-underlay-secondary: #b3db8d;
+$dragon-underlay-highlight: lighten($dragon-underlay-secondary, 20%);
+$dragon-underlay-shade-1: darken($dragon-underlay-base, 20%);
+$dragon-underlay-shade-2: darken($dragon-underlay-base, 40%);
+
+// lion
+$lion-scroll-base: #b88343;
+$lion-scroll-secondary: #eec984;
+$lion-scroll-highlight: lighten($lion-scroll-base, 5%);
+$lion-scroll-shade-1: darken($lion-scroll-base, 10%);
+$lion-scroll-shade-2: darken($lion-scroll-base, 15%);
+$lion-scroll-shade-3: darken($lion-scroll-base, 20%);
+$lion-scroll-shade-4: darken($lion-scroll-base, 30%);
+$lion-scroll-shade-5: darken($lion-scroll-base, 40%);
+$lion-scroll-shade-6: darken($lion-scroll-base, 50%);
+$lion-scroll-shade-rgb: red($lion-scroll-shade-5), green($lion-scroll-shade-5),
+  blue($lion-scroll-shade-5);
+
+$lion-underlay-base: #a57d3e;
+$lion-underlay-secondary: #ffdd6f;
+$lion-underlay-highlight: lighten($lion-underlay-secondary, 20%);
+$lion-underlay-shade-1: darken($lion-underlay-base, 20%);
+$lion-underlay-shade-2: darken($lion-underlay-base, 40%);
+
+// mantis
+$mantis-scroll-base: #1ca05e;
+$mantis-scroll-secondary: #91f5b7;
+$mantis-scroll-highlight: lighten($mantis-scroll-base, 5%);
+$mantis-scroll-shade-1: darken($mantis-scroll-base, 10%);
+$mantis-scroll-shade-2: darken($mantis-scroll-base, 15%);
+$mantis-scroll-shade-3: darken($mantis-scroll-base, 20%);
+$mantis-scroll-shade-4: darken($mantis-scroll-base, 30%);
+$mantis-scroll-shade-5: darken($mantis-scroll-base, 40%);
+$mantis-scroll-shade-6: darken($mantis-scroll-base, 50%);
+$mantis-scroll-shade-rgb: red($mantis-scroll-shade-5),
+  green($mantis-scroll-shade-5), blue($mantis-scroll-shade-5);
+
+$mantis-underlay-base: #053945;
+$mantis-underlay-secondary: #1f97a0;
+$mantis-underlay-highlight: lighten($mantis-underlay-secondary, 20%);
+$mantis-underlay-shade-1: darken($mantis-underlay-base, 20%);
+$mantis-underlay-shade-2: darken($mantis-underlay-base, 40%);
+
+// phoenix
+$phoenix-scroll-base: #e47317;
+$phoenix-scroll-secondary: #ffac68;
+$phoenix-scroll-highlight: lighten($phoenix-scroll-base, 5%);
+$phoenix-scroll-shade-1: darken($phoenix-scroll-base, 10%);
+$phoenix-scroll-shade-2: darken($phoenix-scroll-base, 15%);
+$phoenix-scroll-shade-3: darken($phoenix-scroll-base, 20%);
+$phoenix-scroll-shade-4: darken($phoenix-scroll-base, 30%);
+$phoenix-scroll-shade-5: darken($phoenix-scroll-base, 40%);
+$phoenix-scroll-shade-6: darken($phoenix-scroll-base, 50%);
+$phoenix-scroll-shade-rgb: red($phoenix-scroll-shade-5),
+  green($phoenix-scroll-shade-5), blue($phoenix-scroll-shade-5);
+
+$phoenix-underlay-base: #e2a447;
+$phoenix-underlay-secondary: #ffdc91;
+$phoenix-underlay-highlight: lighten($phoenix-underlay-secondary, 20%);
+$phoenix-underlay-shade-1: darken($phoenix-underlay-base, 20%);
+$phoenix-underlay-shade-2: darken($phoenix-underlay-base, 40%);
+
+// scorpion
+$scorpion-scroll-base: #b8171c;
+$scorpion-scroll-secondary: #ff737a;
+$scorpion-scroll-highlight: lighten($scorpion-scroll-base, 5%);
+$scorpion-scroll-shade-1: darken($scorpion-scroll-base, 10%);
+$scorpion-scroll-shade-2: darken($scorpion-scroll-base, 15%);
+$scorpion-scroll-shade-3: darken($scorpion-scroll-base, 20%);
+$scorpion-scroll-shade-4: darken($scorpion-scroll-base, 30%);
+$scorpion-scroll-shade-5: darken($scorpion-scroll-base, 40%);
+$scorpion-scroll-shade-6: darken($scorpion-scroll-base, 50%);
+$scorpion-scroll-shade-rgb: red($scorpion-scroll-shade-5),
+  green($scorpion-scroll-shade-5), blue($scorpion-scroll-shade-5);
+
+$scorpion-underlay-base: #471966;
+$scorpion-underlay-secondary: #5b26b1;
+$scorpion-underlay-highlight: lighten($scorpion-underlay-secondary, 20%);
+$scorpion-underlay-shade-1: darken($scorpion-underlay-base, 20%);
+$scorpion-underlay-shade-2: darken($scorpion-underlay-base, 40%);
+
+// spider
+$spider-scroll-base: #918f8f;
+$spider-scroll-secondary: #ebeeec;
+$spider-scroll-highlight: lighten($spider-scroll-base, 5%);
+$spider-scroll-shade-1: darken($spider-scroll-base, 10%);
+$spider-scroll-shade-2: darken($spider-scroll-base, 15%);
+$spider-scroll-shade-3: darken($spider-scroll-base, 20%);
+$spider-scroll-shade-4: darken($spider-scroll-base, 30%);
+$spider-scroll-shade-5: darken($spider-scroll-base, 40%);
+$spider-scroll-shade-6: darken($spider-scroll-base, 50%);
+$spider-scroll-shade-rgb: red($spider-scroll-shade-5),
+  green($spider-scroll-shade-5), blue($spider-scroll-shade-5);
+
+$spider-underlay-base: #9a9995;
+$spider-underlay-secondary: #f9f3f3;
+$spider-underlay-highlight: lighten($spider-underlay-secondary, 20%);
+$spider-underlay-shade-1: darken($spider-underlay-base, 20%);
+$spider-underlay-shade-2: darken($spider-underlay-base, 40%);
+
+// unicorn
+$unicorn-scroll-base: #815dc2;
+$unicorn-scroll-secondary: #d1befd;
+$unicorn-scroll-highlight: lighten($unicorn-scroll-base, 5%);
+$unicorn-scroll-shade-1: darken($unicorn-scroll-base, 10%);
+$unicorn-scroll-shade-2: darken($unicorn-scroll-base, 15%);
+$unicorn-scroll-shade-3: darken($unicorn-scroll-base, 20%);
+$unicorn-scroll-shade-4: darken($unicorn-scroll-base, 30%);
+$unicorn-scroll-shade-5: darken($unicorn-scroll-base, 40%);
+$unicorn-scroll-shade-6: darken($unicorn-scroll-base, 50%);
+$unicorn-scroll-shade-rgb: red($unicorn-scroll-shade-5),
+  green($unicorn-scroll-shade-5), blue($unicorn-scroll-shade-5);
+
+$unicorn-underlay-base: #a54d64;
+$unicorn-underlay-secondary: #d677aa;
+$unicorn-underlay-highlight: lighten($unicorn-underlay-secondary, 20%);
+$unicorn-underlay-shade-1: darken($unicorn-underlay-base, 20%);
+$unicorn-underlay-shade-2: darken($unicorn-underlay-base, 40%);

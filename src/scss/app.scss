@@ -1,0 +1,80 @@
+@import "./partials/fonts";
+@import "./partials/variables";
+@import "./partials/colour-variants";
+@import "./partials/mixins";
+@import "./partials/card";
+@import "./partials/form";
+@import "./partials/img-upload";
+
+// globals
+html,
+*,
+::before,
+::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: unset;
+  line-height: unset;
+}
+
+:root {
+  --scroll-base: #{$scroll-base};
+  --scroll-secondary: #{$scroll-secondary};
+  --scroll-highlight: #{$scroll-highlight};
+  --scroll-shade-1: #{$scroll-shade-1};
+  --scroll-shade-2: #{$scroll-shade-2};
+  --scroll-shade-3: #{$scroll-shade-3};
+  --scroll-shade-4: #{$scroll-shade-4};
+  --scroll-shade-5: #{$scroll-shade-5};
+  --scroll-shade-6: #{$scroll-shade-6};
+  --scroll-shade-rgb: #{$scroll-shade-rgb};
+
+  --underlay-base: #{$underlay-base};
+  --underlay-secondary: #{$underlay-secondary};
+  --underlay-highlight: #{$underlay-highlight};
+  --underlay-shade-1: #{$underlay-shade-1};
+  --underlay-shade-2: #{$underlay-shade-2};
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #312244, #212f45);
+  @include flex();
+  text-align: center;
+  font-family: unset;
+  font-size: unset;
+  line-height: unset;
+  color: unset;
+  padding: unset;
+}
+
+main {
+  @include flex();
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  margin: unset;
+  padding: unset;
+  line-height: unset;
+  font-family: unset;
+  font-size: unset;
+}
+
+.heading {
+  width: 100%;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: normal;
+}

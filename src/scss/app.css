@@ -1,0 +1,816 @@
+@font-face {
+  font-family: "Brushtip Texe";
+  src: url("../assets/fonts/BrushtipTexe.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Present Condensed";
+  src: url("../assets/fonts/L5RTitles_0.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fontin";
+  src: url("../assets/fonts/Fontin-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fontin";
+  src: url("../assets/fonts/Fontin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fontin";
+  src: url("../assets/fonts/Fontin-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Fontin Small Caps";
+  src: url("../assets/fonts/Fontin-SmallCaps.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * =========================
+ * ******** Colours ********
+ * =========================
+ */
+/*
+ * ==========================
+ * ***** Clan Variables *****
+ * ==========================
+ */
+.card.crab {
+  --scroll-base: #2850a0;
+  --scroll-secondary: #73bbff;
+  --scroll-highlight: #2d5ab4;
+  --scroll-shade-1: #1e3c77;
+  --scroll-shade-2: #193163;
+  --scroll-shade-3: #14274e;
+  --scroll-shade-4: #091326;
+  --scroll-shade-5: black;
+  --scroll-shade-6: black;
+  --scroll-shade-rgb: 0, 0, 0;
+  --underlay-base: #43666b;
+  --underlay-secondary: #87a8b1;
+  --underlay-highlight: #c5d5d9;
+  --underlay-shade-1: #1c2a2c;
+  --underlay-shade-2: black;
+}
+
+.card.crane {
+  --scroll-base: #7bc3da;
+  --scroll-secondary: #9ce7fd;
+  --scroll-highlight: #8fcce0;
+  --scroll-shade-1: #53b1cf;
+  --scroll-shade-2: #3fa8c9;
+  --scroll-shade-3: #349abb;
+  --scroll-shade-4: #297993;
+  --scroll-shade-5: #1e586b;
+  --scroll-shade-6: #133743;
+  --scroll-shade-rgb: 29.99408, 88.36095, 107.00592;
+  --underlay-base: #7395b6;
+  --underlay-secondary: #d0e4f4;
+  --underlay-highlight: white;
+  --underlay-shade-1: #436280;
+  --underlay-shade-2: #202f3d;
+}
+
+.card.dragon {
+  --scroll-base: #cccf1e;
+  --scroll-secondary: #f8eb5d;
+  --scroll-highlight: #dde027;
+  --scroll-shade-1: #a0a218;
+  --scroll-shade-2: #8a8c14;
+  --scroll-shade-3: #747611;
+  --scroll-shade-4: #48490b;
+  --scroll-shade-5: #1c1d04;
+  --scroll-shade-6: black;
+  --scroll-shade-rgb: 28.40506, 28.82278, 4.17722;
+  --underlay-base: #517e46;
+  --underlay-secondary: #b3db8d;
+  --underlay-highlight: #e7f3db;
+  --underlay-shade-1: #273c22;
+  --underlay-shade-2: black;
+}
+
+.card.lion {
+  --scroll-base: #b88343;
+  --scroll-secondary: #eec984;
+  --scroll-highlight: #c18f54;
+  --scroll-shade-1: #936835;
+  --scroll-shade-2: #805b2f;
+  --scroll-shade-3: #6d4e28;
+  --scroll-shade-4: #48331a;
+  --scroll-shade-5: #22190d;
+  --scroll-shade-6: black;
+  --scroll-shade-rgb: 34.45418, 24.52988, 12.54582;
+  --underlay-base: #a57d3e;
+  --underlay-secondary: #ffdd6f;
+  --underlay-highlight: #fff5d5;
+  --underlay-shade-1: #5b4522;
+  --underlay-shade-2: #110d06;
+}
+
+.card.mantis {
+  --scroll-base: #1ca05e;
+  --scroll-secondary: #91f5b7;
+  --scroll-highlight: #20b66b;
+  --scroll-shade-1: #147545;
+  --scroll-shade-2: #115f38;
+  --scroll-shade-3: #0d492b;
+  --scroll-shade-4: #051e12;
+  --scroll-shade-5: black;
+  --scroll-shade-6: black;
+  --scroll-shade-rgb: 0, 0, 0;
+  --underlay-base: #053945;
+  --underlay-secondary: #1f97a0;
+  --underlay-highlight: #49d2dc;
+  --underlay-shade-1: black;
+  --underlay-shade-2: black;
+}
+
+.card.phoenix {
+  --scroll-base: #e47317;
+  --scroll-secondary: #ffac68;
+  --scroll-highlight: #ea802b;
+  --scroll-shade-1: #b65c12;
+  --scroll-shade-2: #9f5010;
+  --scroll-shade-3: #87440e;
+  --scroll-shade-4: #592d09;
+  --scroll-shade-5: #2b1604;
+  --scroll-shade-6: black;
+  --scroll-shade-rgb: 42.69323, 21.53386, 4.30677;
+  --underlay-base: #e2a447;
+  --underlay-secondary: #ffdc91;
+  --underlay-highlight: #fffcf7;
+  --underlay-shade-1: #a8701b;
+  --underlay-shade-2: #50350d;
+}
+
+.card.scorpion {
+  --scroll-base: #b8171c;
+  --scroll-secondary: #ff737a;
+  --scroll-highlight: #cf1a1f;
+  --scroll-shade-1: #8b1115;
+  --scroll-shade-2: #740f12;
+  --scroll-shade-3: #5d0c0e;
+  --scroll-shade-4: #300607;
+  --scroll-shade-5: #030000;
+  --scroll-shade-6: black;
+  --scroll-shade-rgb: 2.66667, 0.33333, 0.4058;
+  --underlay-base: #471966;
+  --underlay-secondary: #5b26b1;
+  --underlay-highlight: #9060dd;
+  --underlay-shade-1: #0e0514;
+  --underlay-shade-2: black;
+}
+
+.card.spider {
+  --scroll-base: #918f8f;
+  --scroll-secondary: #ebeeec;
+  --scroll-highlight: #9e9c9c;
+  --scroll-shade-1: #787575;
+  --scroll-shade-2: #6b6969;
+  --scroll-shade-3: #5e5c5c;
+  --scroll-shade-4: #444343;
+  --scroll-shade-5: #2a2a2a;
+  --scroll-shade-6: #111010;
+  --scroll-shade-rgb: 42.37838, 41.62162, 41.62162;
+  --underlay-base: #9a9995;
+  --underlay-secondary: #f9f3f3;
+  --underlay-highlight: white;
+  --underlay-shade-1: #676662;
+  --underlay-shade-2: #333230;
+}
+
+.card.unicorn {
+  --scroll-base: #815dc2;
+  --scroll-secondary: #d1befd;
+  --scroll-highlight: #8f70c9;
+  --scroll-shade-1: #6741ab;
+  --scroll-shade-2: #5c3a99;
+  --scroll-shade-3: #503386;
+  --scroll-shade-4: #3a2561;
+  --scroll-shade-5: #24173c;
+  --scroll-shade-6: #0e0917;
+  --scroll-shade-rgb: 36.10314, 22.70404, 60.29596;
+  --underlay-base: #a54d64;
+  --underlay-secondary: #d677aa;
+  --underlay-highlight: #eec5db;
+  --underlay-shade-1: #5f2d3a;
+  --underlay-shade-2: #1a0c10;
+}
+
+.card {
+  width: 2.5in;
+  height: 3.5in;
+  background: black;
+  padding: 0.125in;
+  border-radius: 0.0625in;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  width: 2.75in;
+  height: 3.75in;
+  background: black;
+  position: absolute;
+  z-index: -1;
+  top: -0.125in;
+  left: -0.125in;
+}
+
+.card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 0.0625in;
+  border: 1px solid cyan;
+  top: 0;
+  left: 0;
+}
+
+.card__name-banner {
+  width: 100%;
+  height: 10%;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__name-banner::before {
+  content: "";
+  width: 100%;
+  height: 125%;
+  background: url("../assets/images/name-scroll_shadow.png") no-repeat;
+  background-size: 110% 100%;
+  background-position: center;
+  background-blend-mode: multiply;
+  position: absolute;
+  bottom: -15%;
+  z-index: -10;
+  -webkit-filter: blur(0.175rem) opacity(75%);
+          filter: blur(0.175rem) opacity(75%);
+}
+
+.card__name-banner-backdrop {
+  width: 100%;
+  height: 115%;
+  background: white;
+  position: relative;
+  top: -7.5%;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0.175rem 0.35rem rgba(67, 77, 87, 0.7);
+          box-shadow: 0 0.175rem 0.35rem rgba(67, 77, 87, 0.7);
+  -webkit-mask-image: url("../assets/images/name-scroll_shadow.png");
+          mask-image: url("../assets/images/name-scroll_shadow.png");
+  -webkit-mask-size: 115%;
+          mask-size: 115%;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+
+.card__name-banner-backdrop::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.3)), color-stop(20%, transparent), to(rgba(67, 77, 87, 0.3))), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background: linear-gradient(90deg, rgba(67, 77, 87, 0.3), transparent 20% 80%, rgba(67, 77, 87, 0.3)), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-blend-mode: darken;
+  position: absolute;
+  z-index: -1;
+  -webkit-filter: grayscale(0.85) brightness(1.25) contrast(135%);
+          filter: grayscale(0.85) brightness(1.25) contrast(135%);
+  opacity: 0.65;
+  overflow: hidden;
+}
+
+.card__name-banner-text {
+  font-family: "Present Condensed";
+  font-size: 1.125rem;
+  font-weight: normal;
+  padding-top: 0.25rem;
+}
+
+.card__name-banner-end {
+  width: 5%;
+  height: 120%;
+  background: lightslategrey;
+  position: absolute;
+  border-radius: 1rem/0.25rem;
+}
+
+.card__name-banner-end--left {
+  left: -0.25rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='28' height='14'%3E%3Cpath fill='whitesmoke' fill-opacity='0.08' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"), -webkit-gradient(linear, right top, left top, color-stop(0, var(--scroll-shade-2)), color-stop(var(--scroll-highlight)), color-stop(var(--scroll-shade-3)), color-stop(70%, var(--scroll-shade-3)), to(var(--scroll-shade-4)));
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='28' height='14'%3E%3Cpath fill='whitesmoke' fill-opacity='0.08' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"), linear-gradient(to left, var(--scroll-shade-2) 0 10%, var(--scroll-highlight), var(--scroll-shade-3), var(--scroll-shade-3) 70% 90%, var(--scroll-shade-4));
+  -webkit-box-shadow: 0.125rem 0 0.3rem #171a1d;
+          box-shadow: 0.125rem 0 0.3rem #171a1d;
+}
+
+.card__name-banner-end--right {
+  right: -0.25rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='28' height='14'%3E%3Cpath fill='whitesmoke' fill-opacity='0.08' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"), -webkit-gradient(linear, left top, right top, color-stop(0, var(--scroll-shade-2)), color-stop(var(--scroll-highlight)), color-stop(var(--scroll-shade-3)), color-stop(70%, var(--scroll-shade-3)), to(var(--scroll-shade-4)));
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='28' height='14'%3E%3Cpath fill='whitesmoke' fill-opacity='0.08' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"), linear-gradient(to right, var(--scroll-shade-2) 0 10%, var(--scroll-highlight), var(--scroll-shade-3), var(--scroll-shade-3) 70% 90%, var(--scroll-shade-4));
+  -webkit-box-shadow: -0.125rem 0 0.3rem #171a1d;
+          box-shadow: -0.125rem 0 0.3rem #171a1d;
+}
+
+.card__image {
+  width: calc(100% - 0.5in);
+  height: 51%;
+  background: gainsboro;
+  background: url("https://place-puppy.com/300x300");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  top: -0.5%;
+}
+
+.card__status-banner {
+  width: 0.5in;
+  height: 100%;
+  position: relative;
+  margin-left: auto;
+  right: -0.5in;
+  -webkit-box-shadow: -0.125rem 0 0.4rem #2d343a;
+          box-shadow: -0.125rem 0 0.4rem #2d343a;
+}
+
+.card__status-banner-backdrop {
+  width: 120%;
+  height: 100%;
+  background: #f2eebf;
+  position: relative;
+  left: -12.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0.175rem 0.35rem rgba(67, 77, 87, 0.7);
+          box-shadow: 0 0.175rem 0.35rem rgba(67, 77, 87, 0.7);
+  -webkit-mask-image: url("../assets/images/status-scroll_shadow.png");
+          mask-image: url("../assets/images/status-scroll_shadow.png");
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+
+.card__status-banner-backdrop::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent 0 60%, rgba(45, 52, 58, 0.5)), -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.5)), color-stop(30%, transparent), to(rgba(67, 77, 87, 0.5))), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background: radial-gradient(transparent 0 60%, rgba(45, 52, 58, 0.5)), linear-gradient(90deg, rgba(67, 77, 87, 0.5), transparent 30% 70%, rgba(67, 77, 87, 0.5)), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background-position: top right;
+  background-size: cover;
+  background-blend-mode: darken;
+  position: absolute;
+  left: 0;
+  -webkit-filter: grayscale(0.85) brightness(1.1);
+          filter: grayscale(0.85) brightness(1.1);
+  opacity: 0.65;
+  overflow: hidden;
+}
+
+.card__scroll {
+  width: 100%;
+  height: 39.5%;
+  position: relative;
+  top: -0.5%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__scroll-backdrop {
+  width: 103%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0.175rem 0.35rem rgba(67, 77, 87, 0.7);
+          box-shadow: 0 0.175rem 0.35rem rgba(67, 77, 87, 0.7);
+  -webkit-mask-image: url("../assets/images/body-scroll_shadow.png");
+          mask-image: url("../assets/images/body-scroll_shadow.png");
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+
+.card__scroll-backdrop::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(transparent 0 30%, rgba(112, 128, 144, 0.5) 60% 90%, rgba(0, 1, 1, 0.5)), -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.5)), color-stop(20%, transparent), to(rgba(67, 77, 87, 0.5))), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background: radial-gradient(transparent 0 30%, rgba(112, 128, 144, 0.5) 60% 90%, rgba(0, 1, 1, 0.5)), linear-gradient(90deg, rgba(67, 77, 87, 0.5), transparent 20% 80%, rgba(67, 77, 87, 0.5)), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-blend-mode: darken;
+  position: absolute;
+  z-index: -1;
+  -webkit-filter: grayscale(0.75) contrast(135%) brightness(1.1);
+          filter: grayscale(0.75) contrast(135%) brightness(1.1);
+  overflow: hidden;
+}
+
+.card__scroll-end {
+  width: 103%;
+  height: 15%;
+  background: var(--scroll-shade-1);
+  position: absolute;
+  border-radius: 0.5rem/2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(var(--scroll-shade-rgb), 0.25))), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='30' height='15'%3E%3Cpath fill='whitesmoke' fill-opacity='0.12' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"), -webkit-gradient(linear, left top, left bottom, color-stop(0, var(--scroll-shade-1)), to(var(--scroll-shade-6)));
+  background-image: linear-gradient(transparent, rgba(var(--scroll-shade-rgb), 0.25)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='30' height='15'%3E%3Cpath fill='whitesmoke' fill-opacity='0.12' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E"), linear-gradient(var(--scroll-shade-1) 0 35%, var(--scroll-shade-6));
+}
+
+.card__scroll-end::before {
+  content: "";
+  width: 2%;
+  height: 80%;
+  background: whitesmoke;
+  position: absolute;
+  left: -0.0125in;
+  z-index: -1;
+  border-radius: 0.5rem/2.5rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(245, 245, 245, 0.25)), to(transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(0, #cfcfcf), color-stop(#2d343a), to(#000101));
+  background: linear-gradient(to right, rgba(245, 245, 245, 0.25) 0 5%, transparent), linear-gradient(to bottom, #cfcfcf 0 15%, #2d343a, #000101);
+}
+
+.card__scroll-end::after {
+  content: "";
+  width: 2%;
+  height: 80%;
+  background: whitesmoke;
+  position: absolute;
+  right: -0.0125in;
+  z-index: -1;
+  border-radius: 0.5rem/2.5rem;
+  background: -webkit-gradient(linear, right top, left top, color-stop(0, rgba(245, 245, 245, 0.25)), to(transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(0, #cfcfcf), color-stop(#2d343a), to(#000101));
+  background: linear-gradient(to left, rgba(245, 245, 245, 0.25) 0 5%, transparent), linear-gradient(to bottom, #cfcfcf 0 15%, #2d343a, #000101);
+}
+
+.card__scroll-end--top {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-shadow: 0 0.125rem 0.25rem #2d343a, 0 -0.125rem 0.5rem #2d343a;
+          box-shadow: 0 0.125rem 0.25rem #2d343a, 0 -0.125rem 0.5rem #2d343a;
+}
+
+.card__scroll-end--bottom {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-shadow: 0 -0.125rem 0.4rem #2d343a;
+          box-shadow: 0 -0.125rem 0.4rem #2d343a;
+}
+
+.card__scroll-end-wraps {
+  height: 110%;
+  background: repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(47, 44, 49, 0.25), rgba(47, 44, 49, 0.25) 2px), -webkit-gradient(linear, left top, left bottom, color-stop(0, #7d7786), color-stop(#2f2c31), to(#0f0f11));
+  background: repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(47, 44, 49, 0.25), rgba(47, 44, 49, 0.25) 2px), linear-gradient(to bottom, #7d7786 0 15%, #2f2c31, #0f0f11);
+  position: relative;
+  top: -5%;
+  border-radius: 0.01125in;
+}
+
+.card__scroll-end-wraps--outer {
+  width: 7%;
+}
+
+.card__scroll-end-wraps--middle {
+  width: 3%;
+}
+
+.card__scroll-end-underlay {
+  width: 8%;
+  height: 98%;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--underlay-base)), color-stop(15%, var(--underlay-secondary)), color-stop(var(--underlay-base)), to(var(--underlay-shade-1)));
+  background: linear-gradient(var(--underlay-base), var(--underlay-secondary) 15% 30%, var(--underlay-base), var(--underlay-shade-1));
+  position: relative;
+  top: -5%;
+  overflow: hidden;
+}
+
+.card__scroll-end-underlay::before {
+  content: "";
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  left: 0;
+  top: -25%;
+  background: url("https://speckyboy.com/wp-content/uploads/2010/04/1-SEAMLESS.jpg"), whitesmoke;
+  background-position: left center;
+  background-size: 125%;
+  -webkit-transform: rotate(75deg);
+          transform: rotate(75deg);
+  background-blend-mode: multiply;
+  opacity: 0.2;
+}
+
+.card__scroll-end-underlay::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--underlay-base)), color-stop(15%, var(--underlay-highlight)), color-stop(var(--underlay-base)), to(var(--underlay-shade-2)));
+  background: linear-gradient(var(--underlay-base), var(--underlay-highlight) 15% 30%, var(--underlay-base), var(--underlay-shade-2));
+  opacity: 0.25;
+}
+
+.card__scroll-end-foil {
+  width: 6%;
+  height: 104%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeda58), color-stop(15%, white), color-stop(45%, #ae9f80), color-stop(55%, #6a5d44), color-stop(95%, #897858));
+  background: linear-gradient(to bottom, #eeda58 0, white 15% 30%, #ae9f80 45%, #6a5d44 55% 60%, #897858 95%);
+  position: relative;
+  top: -6%;
+}
+
+.card__scroll-end-foil--skinny {
+  width: 1.5%;
+}
+
+.card__scroll-inner-text {
+  width: 100%;
+  display: block;
+  padding: 1.35rem 0.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-family: "Fontin";
+}
+
+.card__scroll-heading-text {
+  font-family: "Fontin";
+  font-size: 0.5rem;
+  font-weight: normal;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  text-transform: uppercase;
+  padding-bottom: 0.125rem;
+  line-height: normal;
+  border-bottom: 1px solid black;
+}
+
+.card__scroll-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.125rem 0;
+  font-size: 0.5rem;
+  font-weight: bold;
+  line-height: 0.65rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.card__scroll-quote {
+  font-size: 0.5rem;
+  font-style: italic;
+  line-height: 0.55rem;
+}
+
+.two-lines__main {
+  width: 100%;
+  font-size: 1rem;
+  padding-top: 0.125rem;
+}
+
+.two-lines__sub {
+  width: 100%;
+  font-size: 0.75rem;
+  margin-top: -0.75rem;
+}
+
+.form-container {
+  width: 60vw;
+  height: 82vh;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  background: whitesmoke;
+  padding: 0.5rem 1.5rem 1.5rem;
+  margin-left: 4rem;
+  border: 2px solid lightslategray;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0.25rem 0.5rem #000101;
+          box-shadow: 0 0.25rem 0.5rem #000101;
+  text-align: left;
+}
+
+.img-upload__form {
+  width: 100%;
+}
+
+.img-upload__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  border: 0;
+}
+
+html,
+*,
+::before,
+::after {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: unset;
+  line-height: unset;
+}
+
+:root {
+  --scroll-base: #885445;
+  --scroll-secondary: #d4b3a0;
+  --scroll-highlight: #995e4e;
+  --scroll-shade-1: #663f34;
+  --scroll-shade-2: #55352b;
+  --scroll-shade-3: #442a23;
+  --scroll-shade-4: #221512;
+  --scroll-shade-5: #010000;
+  --scroll-shade-6: black;
+  --scroll-shade-rgb: 0.66341, 0.40976, 0.33659;
+  --underlay-base: #6e4a2c;
+  --underlay-secondary: #b98c63;
+  --underlay-highlight: #d9c0a9;
+  --underlay-shade-1: #25190f;
+  --underlay-shade-2: black;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #312244, #212f45);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-family: unset;
+  font-size: unset;
+  line-height: unset;
+  color: unset;
+  padding: unset;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  margin: unset;
+  padding: unset;
+  line-height: unset;
+  font-family: unset;
+  font-size: unset;
+}
+
+.heading {
+  width: 100%;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+/*# sourceMappingURL=app.css.map */

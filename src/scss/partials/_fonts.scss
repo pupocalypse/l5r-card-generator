@@ -1,0 +1,46 @@
+// character names
+@font-face {
+  font-family: "Brushtip Texe";
+  src: url("../assets/fonts/BrushtipTexe.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// character names * alt *
+@font-face {
+  font-family: "Present Condensed";
+  src: url("../assets/fonts/L5RTitles_0.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fontin";
+  src: url("../assets/fonts/Fontin-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// keywords
+@font-face {
+  font-family: "Fontin";
+  src: url("../assets/fonts/Fontin-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+// quote
+@font-face {
+  font-family: "Fontin";
+  src: url("../assets/fonts/Fontin-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+// titles
+@font-face {
+  font-family: "Fontin Small Caps";
+  src: url("../assets/fonts/Fontin-SmallCaps.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
