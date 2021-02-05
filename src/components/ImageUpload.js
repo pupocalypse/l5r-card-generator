@@ -1,6 +1,12 @@
 import { Button } from "semantic-ui-react";
 
-function ImageUpload() {
+function ImageUpload({ cardState, setCardState }) {
+  const changeHandler = (e) => {
+    const data = { ...cardState };
+    data.photo = URL.createObjectURL(e.target.files[0]);
+    setCardState(data);
+  };
+
   return (
     <div className="img-upload">
       <form className="img-upload__form">
@@ -17,6 +23,7 @@ function ImageUpload() {
             id="file-upload"
             name="file-upload"
             accept="image/*"
+            onChange={changeHandler}
           />
           Choose a file
         </Button>

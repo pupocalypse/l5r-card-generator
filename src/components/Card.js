@@ -1,3 +1,5 @@
+import CardPhoto from "./CardPhoto";
+
 function Card({ cardState }) {
   const {
     name,
@@ -37,11 +39,11 @@ function Card({ cardState }) {
       </div>
 
       {/* image & status banner section */}
-      <div class="card__image">
+      <CardPhoto cardState={cardState}>
         <div class="card__status-banner">
           <div className="card__status-banner-backdrop"></div>
         </div>
-      </div>
+      </CardPhoto>
 
       {/* scroll section */}
       <div class="card__scroll">

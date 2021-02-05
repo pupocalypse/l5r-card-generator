@@ -17,7 +17,7 @@ function FormContainer({ cardState, setCardState }) {
       render: () => (
         <Tab.Pane attached={false}>
           <h2>Image Uploader goes here</h2>
-          <ImageUpload />
+          <ImageUpload cardState={cardState} setCardState={setCardState} />
         </Tab.Pane>
       ),
     },

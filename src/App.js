@@ -14,6 +14,7 @@ function App() {
     keywords: ["Keyword", "Keyword", "Keyword"],
     quote:
       "Optional quote from this character that probably takes up a couple of lines and maybe, just maybe, a third one as well?",
+    photo: null,
   });
 
   return (
