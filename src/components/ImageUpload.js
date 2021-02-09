@@ -1,34 +1,65 @@
+import { useState, useEffect, useRef } from "react";
 import { Button } from "semantic-ui-react";
+import Croppie from "croppie";
 
 function ImageUpload({ cardState, setCardState }) {
-  const changeHandler = (e) => {
+  const [croppie, setCroppie] = useState(null);
+  const croppieContainer = useRef();
+  const options = {
+    viewport: {
+      width: 168,
+      height: 159,
+    },
+  };
+
+  const addCroppieInstance = (photo) => {
+    let croppieInstance;
+    if (!croppie) {
+      croppieInstance = new Croppie(croppieContainer.current, options);
+    } else {
+      croppieInstance = croppie;
+    }
+    croppieInstance.bind({ url: photo });
+    setCroppie(croppieInstance);
+  };
+
+  const changeImage = (e) => {
     const data = { ...cardState };
     data.photo = URL.createObjectURL(e.target.files[0]);
     setCardState(data);
+    addCroppieInstance(data.photo);
   };
 
   return (
-    <div className="img-upload">
-      <form className="img-upload__form">
-        <Button
-          as="label"
-          htmlFor="file-upload"
-          circular
-          type="button"
-          size="mini"
-        >
-          <input
-            className="img-upload__input"
-            type="file"
-            id="file-upload"
-            name="file-upload"
-            accept="image/*"
-            onChange={changeHandler}
-          />
-          Choose a file
-        </Button>
-      </form>
-    </div>
+    <>
+      <div
+        className="img-edit"
+        id="img-edit"
+        ref={croppieContainer}
+        style={{ width: "50%", height: "50vh" }}
+      ></div>
+      <div className="img-upload">
+        <form className="img-upload__form">
+          <Button
+            as="label"
+            htmlFor="file-upload"
+            circular
+            type="button"
+            size="mini"
+          >
+            <input
+              className="img-upload__input"
+              type="file"
+              id="file-upload"
+              name="file-upload"
+              accept="image/*"
+              onChange={changeImage}
+            />
+            Choose a file
+          </Button>
+        </form>
+      </div>
+    </>
   );
 }
 

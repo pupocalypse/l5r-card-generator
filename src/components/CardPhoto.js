@@ -3,13 +3,13 @@ function CardPhoto({ cardState, children }) {
     const photoStyle = { backgroundImage: `url(${cardState.photo})` };
 
     return (
-      <div class="card__image" style={photoStyle}>
+      <div className="card__image" style={photoStyle}>
         {children}
       </div>
     );
   }
 
-  return <div class="card__image">{children}</div>;
+  return <div className="card__image">{children}</div>;
 }
 
 export default CardPhoto;
