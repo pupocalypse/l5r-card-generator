@@ -1,6 +1,6 @@
 function CardPhoto({ cardState, children }) {
-  if (cardState.photo) {
-    const photoStyle = { backgroundImage: `url(${cardState.photo})` };
+  if (cardState?.photo?.cropped) {
+    const photoStyle = { backgroundImage: `url(${cardState.photo.cropped})` };
 
     return (
       <div className="card__image" style={photoStyle}>

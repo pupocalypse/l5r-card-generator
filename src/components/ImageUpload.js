@@ -12,6 +12,24 @@ function ImageUpload({ cardState, setCardState }) {
     },
   };
 
+  useEffect(() => {
+    const croppieRef = croppieContainer.current;
+    const event = () => {
+      croppie.result("blob").then((result) => {
+        result = URL.createObjectURL(result);
+        const data = { ...cardState };
+        data.photo.cropped = result;
+        setCardState(data);
+      });
+    };
+    if (croppie != null) {
+      croppieRef.addEventListener("update", event);
+      return () => {
+        croppieRef?.removeEventListener("update", event);
+      };
+    }
+  }, [cardState, setCardState, croppie]);
+
   const addCroppieInstance = (photo) => {
     let croppieInstance;
     if (!croppie) {
@@ -25,9 +43,10 @@ function ImageUpload({ cardState, setCardState }) {
 
   const changeImage = (e) => {
     const data = { ...cardState };
-    data.photo = URL.createObjectURL(e.target.files[0]);
+    data.photo.original = URL.createObjectURL(e.target.files[0]);
+    data.photo.cropped = URL.createObjectURL(e.target.files[0]);
     setCardState(data);
-    addCroppieInstance(data.photo);
+    addCroppieInstance(data.photo.original);
   };
 
   return (
@@ -36,7 +55,7 @@ function ImageUpload({ cardState, setCardState }) {
         className="img-edit"
         id="img-edit"
         ref={croppieContainer}
-        style={{ width: "50%", height: "50vh" }}
+        style={{ width: "50%", height: "12rem" }}
       ></div>
       <div className="img-upload">
         <form className="img-upload__form">
