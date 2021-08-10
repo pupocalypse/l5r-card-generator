@@ -1,3 +1,138 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 @font-face {
   font-family: "Brushtip Texe";
   src: url("../assets/fonts/BrushtipTexe.otf") format("opentype");
@@ -40,6 +175,16 @@
   font-style: normal;
 }
 
+/*
+ * =========================
+ * ********* Paths *********
+ * =========================
+ */
+/*
+ * =========================
+ * ********* Fonts *********
+ * =========================
+ */
 /*
  * =========================
  * ******** Colours ********
@@ -316,8 +461,8 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.3)), color-stop(20%, transparent), to(rgba(67, 77, 87, 0.3))), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
-  background: linear-gradient(90deg, rgba(67, 77, 87, 0.3), transparent 20% 80%, rgba(67, 77, 87, 0.3)), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.3)), color-stop(20%, transparent), to(rgba(67, 77, 87, 0.3))), url("../assets/images/paper-texture.png");
+  background: linear-gradient(90deg, rgba(67, 77, 87, 0.3), transparent 20% 80%, rgba(67, 77, 87, 0.3)), url("../assets/images/paper-texture.png");
   background-position: bottom;
   background-size: cover;
   background-blend-mode: darken;
@@ -363,7 +508,6 @@
 .card__image {
   width: calc(100% - 0.5in);
   height: 51%;
-  background: gainsboro;
   background: url("https://place-puppy.com/300x300");
   background-size: cover;
   background-position: center;
@@ -416,8 +560,8 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: radial-gradient(transparent 0 60%, rgba(45, 52, 58, 0.5)), -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.5)), color-stop(30%, transparent), to(rgba(67, 77, 87, 0.5))), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
-  background: radial-gradient(transparent 0 60%, rgba(45, 52, 58, 0.5)), linear-gradient(90deg, rgba(67, 77, 87, 0.5), transparent 30% 70%, rgba(67, 77, 87, 0.5)), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background: radial-gradient(transparent 0 60%, rgba(45, 52, 58, 0.5)), -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.5)), color-stop(30%, transparent), to(rgba(67, 77, 87, 0.5))), url("../assets/images/paper-texture.png");
+  background: radial-gradient(transparent 0 60%, rgba(45, 52, 58, 0.5)), linear-gradient(90deg, rgba(67, 77, 87, 0.5), transparent 30% 70%, rgba(67, 77, 87, 0.5)), url("../assets/images/paper-texture.png");
   background-position: top right;
   background-size: cover;
   background-blend-mode: darken;
@@ -487,8 +631,8 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: radial-gradient(transparent 0 30%, rgba(112, 128, 144, 0.5) 60% 90%, rgba(0, 1, 1, 0.5)), -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.5)), color-stop(20%, transparent), to(rgba(67, 77, 87, 0.5))), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
-  background: radial-gradient(transparent 0 30%, rgba(112, 128, 144, 0.5) 60% 90%, rgba(0, 1, 1, 0.5)), linear-gradient(90deg, rgba(67, 77, 87, 0.5), transparent 20% 80%, rgba(67, 77, 87, 0.5)), url("https://inspirationhut.net/wp-content/uploads/2012/11/Worn-Paper-Texture.jpg");
+  background: radial-gradient(transparent 0 30%, rgba(112, 128, 144, 0.5) 60% 90%, rgba(0, 1, 1, 0.5)), -webkit-gradient(linear, left top, right top, from(rgba(67, 77, 87, 0.5)), color-stop(20%, transparent), to(rgba(67, 77, 87, 0.5))), url("../assets/images/paper-texture.png");
+  background: radial-gradient(transparent 0 30%, rgba(112, 128, 144, 0.5) 60% 90%, rgba(0, 1, 1, 0.5)), linear-gradient(90deg, rgba(67, 77, 87, 0.5), transparent 20% 80%, rgba(67, 77, 87, 0.5)), url("../assets/images/paper-texture.png");
   background-position: bottom;
   background-size: cover;
   background-blend-mode: darken;
@@ -577,8 +721,21 @@
   width: 7%;
 }
 
+.card__scroll-end-wraps--outer:first-of-type {
+  -webkit-box-shadow: -0.125rem 0 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: -0.125rem 0 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.card__scroll-end-wraps--outer:last-of-type {
+  -webkit-box-shadow: 0.125rem 0 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0.125rem 0 0.25rem rgba(0, 0, 0, 0.25);
+}
+
 .card__scroll-end-wraps--middle {
   width: 3%;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 0.125rem 0.065rem rgba(0, 0, 0, 0.375);
+          box-shadow: 0 0 0.125rem 0.065rem rgba(0, 0, 0, 0.375);
 }
 
 .card__scroll-end-underlay {
@@ -596,7 +753,7 @@
   width: 150%;
   height: 150%;
   position: absolute;
-  left: 0;
+  left: -0.25rem;
   top: -25%;
   background: url("https://speckyboy.com/wp-content/uploads/2010/04/1-SEAMLESS.jpg"), whitesmoke;
   background-position: left center;
@@ -625,6 +782,17 @@
   background: linear-gradient(to bottom, #eeda58 0, white 15% 30%, #ae9f80 45%, #6a5d44 55% 60%, #897858 95%);
   position: relative;
   top: -6%;
+  z-index: 1;
+}
+
+.card__scroll-end-foil:nth-child(2), .card__scroll-end-foil:nth-child(6) {
+  -webkit-box-shadow: 0.125rem 0 0.125rem rgba(0, 0, 0, 0.1625);
+          box-shadow: 0.125rem 0 0.125rem rgba(0, 0, 0, 0.1625);
+}
+
+.card__scroll-end-foil:nth-child(4), .card__scroll-end-foil:nth-child(8) {
+  -webkit-box-shadow: -0.125rem 0 0.125rem rgba(0, 0, 0, 0.1625);
+          box-shadow: -0.125rem 0 0.125rem rgba(0, 0, 0, 0.1625);
 }
 
 .card__scroll-end-foil--skinny {
@@ -714,17 +882,6 @@
   border: 0;
 }
 
-html,
-*,
-::before,
-::after {
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: unset;
-  line-height: unset;
-}
-
 :root {
   --scroll-base: #885445;
   --scroll-secondary: #d4b3a0;
@@ -786,21 +943,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  margin: unset;
-  padding: unset;
-  line-height: unset;
-  font-family: unset;
-  font-size: unset;
 }
 
 .heading {

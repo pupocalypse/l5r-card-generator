@@ -1,3 +1,4 @@
+@import "./partials/reset";
 @import "./partials/fonts";
 @import "./partials/variables";
 @import "./partials/colour-variants";
@@ -7,15 +8,15 @@
 @import "./partials/img-upload";
 
 // globals
-html,
-*,
-::before,
-::after {
-  margin: 0;
-  box-sizing: border-box;
-  font-size: unset;
-  line-height: unset;
-}
+// html,
+// *,
+// ::before,
+// ::after {
+//   margin: 0;
+//   box-sizing: border-box;
+//   font-size: unset;
+//   line-height: unset;
+// }
 
 :root {
   --scroll-base: #{$scroll-base};
@@ -53,20 +54,20 @@ main {
   @include flex();
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  margin: unset;
-  padding: unset;
-  line-height: unset;
-  font-family: unset;
-  font-size: unset;
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p,
+// li {
+//   margin: unset;
+//   padding: unset;
+//   line-height: unset;
+//   font-family: unset;
+//   font-size: unset;
+// }
 
 .heading {
   width: 100%;

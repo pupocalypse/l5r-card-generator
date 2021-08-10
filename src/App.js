@@ -22,7 +22,7 @@ function App() {
 
   return (
     <main className="App">
-      <h1 className="heading">Visual Layout Test</h1>
+      <h1 className="heading">L5R Character Card Generator</h1>
       <Card cardState={cardState} />
       {/* <InputForm cardState={cardState} setCardState={setCardState} /> */}
       <section className="form-container">
