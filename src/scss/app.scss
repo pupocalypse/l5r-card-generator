@@ -1,11 +1,12 @@
-@import "./partials/reset";
-@import "./partials/fonts";
-@import "./partials/variables";
-@import "./partials/colour-variants";
-@import "./partials/mixins";
-@import "./partials/card";
-@import "./partials/form";
-@import "./partials/img-upload";
+@import "./partials/base/reset";
+@import "./partials/base/fonts";
+@import "./partials/base/variables";
+@import "./partials/base/colour-variants";
+@import "./partials/base/mixins";
+@import "./partials/base/forms";
+@import "./partials/components/card";
+@import "./partials/components/form";
+@import "./partials/components/img-upload";
 
 // globals
 // html,
@@ -43,7 +44,7 @@ body {
   background: linear-gradient(135deg, #312244, #212f45);
   @include flex();
   text-align: center;
-  font-family: unset;
+  font-family: "Fontin";
   font-size: unset;
   line-height: unset;
   color: unset;
