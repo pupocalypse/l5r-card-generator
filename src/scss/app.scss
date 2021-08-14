@@ -3,21 +3,10 @@
 @import "./partials/base/variables";
 @import "./partials/base/colour-variants";
 @import "./partials/base/mixins";
-@import "./partials/base/forms";
+@import "./partials/base/interactives";
 @import "./partials/components/card";
 @import "./partials/components/form";
 @import "./partials/components/img-upload";
-
-// globals
-// html,
-// *,
-// ::before,
-// ::after {
-//   margin: 0;
-//   box-sizing: border-box;
-//   font-size: unset;
-//   line-height: unset;
-// }
 
 :root {
   --scroll-base: #{$scroll-base};
@@ -39,21 +28,22 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(135deg, #312244, #212f45);
-  @include flex();
+  width: 100%;
+  min-height: 100vh;
+  // background: linear-gradient(135deg, #312244, #212f45);
+  background: linear-gradient(135deg, $text, $pop_text) no-repeat;
+  // @include flex();
   text-align: center;
-  font-family: "Fontin";
+  font-family: $font_ui;
   font-size: unset;
   line-height: unset;
-  color: unset;
+  color: $text;
   padding: unset;
 }
 
-main {
-  @include flex();
-}
+// main {
+//   @include flex();
+// }
 
 // h1,
 // h2,
@@ -71,12 +61,14 @@ main {
 // }
 
 .heading {
-  width: 100%;
   color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
   padding: 1rem;
   font-size: 1.25rem;
-  font-weight: normal;
+  font-weight: 200;
+}
+
+.card-form {
+  @include flex();
+  gap: 2.5rem;
+  padding: 4rem;
 }

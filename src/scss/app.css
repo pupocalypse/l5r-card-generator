@@ -2,6 +2,14 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;500&family=Josefin+Sans:wght@300;500&family=Nanum+Gothic&display=swap");
+html,
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -191,9 +199,19 @@ table {
  * =========================
  */
 /*
- * ==========================
- * ***** Clan Variables *****
- * ==========================
+ * ~~~~~~ Site Colours ~~~~~~
+ */
+/*
+ * ~~~~~~ Card Colours ~~~~~~
+ * common card elements for all clans
+ */
+/*
+ * ~~~~~~ Clan Colours ~~~~~~
+ * scroll main & underlay * changes by clan, but follows same scheme *
+ * $scroll-base: slategray; // original test colours
+ * $scroll-highlight: whitesmoke; // original test colours
+ * $underlay-base: gray; // original test colours
+ * $underlay-highlight: lightgray; // original test colours
  */
 .card.crab {
   --scroll-base: #2850a0;
@@ -357,10 +375,18 @@ table {
   --underlay-shade-2: #1a0c10;
 }
 
+/*
+===================================
+************** FORMS **************
+===================================
+*/
 fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
   width: 100%;
@@ -371,25 +397,34 @@ label {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  color: #d64933;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
 }
 
 label span {
   display: block;
+  width: 100%;
 }
 
 label em {
-  font-family: "Fontin Small Caps";
+  color: #16262e;
+  font-weight: 300;
   font-size: 0.625rem;
-  letter-spacing: 0.0625rem;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="checkbox"],
-textarea {
+textarea,
+select {
   font-family: inherit;
-  color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(47, 79, 79, 0.5);
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: rgba(22, 38, 46, 0.8);
+  border: 1px solid rgba(71, 71, 71, 0.5);
   border-radius: 0.25rem;
   padding: 0.375rem;
   width: 100%;
@@ -403,13 +438,69 @@ input[type="email"]:focus,
 input[type="checkbox"]:hover,
 input[type="checkbox"]:focus,
 textarea:hover,
-textarea:focus {
-  border-color: darkslategray;
+textarea:focus,
+select:hover,
+select:focus {
+  border-color: #474747;
+}
+
+input[type="text"]:focus, input[type="text"]:focus-visible,
+input[type="email"]:focus,
+input[type="email"]:focus-visible,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.125rem #657ed4;
+          box-shadow: 0 0 0 0.125rem #657ed4;
 }
 
 textarea {
   resize: none;
-  min-height: 4rem;
+  min-height: calc(3rem + (0.5rem * 2));
+}
+
+/*
+===================================
+************* BUTTONS *************
+===================================
+*/
+button,
+button[type="button"],
+button[type="submit"],
+.button,
+.button--secondary {
+  color: white;
+  background: #d64933;
+  border: 2px solid #d64933;
+  border-radius: 1rem;
+  padding: 0.125rem 0.5rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+button[type="button"]:hover,
+button[type="submit"]:hover,
+.button:hover,
+.button--secondary:hover {
+  color: #d64933;
+  background: transparent;
+}
+
+.button--secondary {
+  background: #aca885;
+  border-color: #aca885;
+  color: #16262e;
+}
+
+.button--secondary:hover {
+  color: #16262e;
+  background: transparent;
+  border-color: #16262e;
 }
 
 .card {
@@ -905,19 +996,67 @@ textarea {
 }
 
 .form-container {
-  width: 60vw;
-  min-height: 82vh;
+  width: 60%;
+  max-width: 40rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  background: whitesmoke;
-  padding: 0.5rem 1.5rem 1.5rem;
-  margin-left: 4rem;
-  border: 2px solid lightslategray;
+  background: #eae9e0;
+  padding: 1rem 1.5rem 1.5rem;
+  border: 2px solid #7a7a7a;
   border-radius: 1rem;
-  -webkit-box-shadow: 0 0.25rem 0.5rem #000101;
-          box-shadow: 0 0.25rem 0.5rem #000101;
+  -webkit-box-shadow: 0 0.25rem 0.5rem rgba(20, 20, 20, 0.4);
+          box-shadow: 0 0.25rem 0.5rem rgba(20, 20, 20, 0.4);
   text-align: left;
+}
+
+.form-container__tab {
+  font-weight: 500;
+  margin: 0 -2px;
+  padding: 0.375rem 0.75rem;
+  border-bottom: 0;
+  border-radius: 0;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  position: relative;
+}
+
+.form-container__tab:first-child, .form-container__tab:last-child {
+  margin: 0;
+}
+
+.form-container__tab:nth-child(1) {
+  z-index: 3;
+}
+
+.form-container__tab:nth-child(2) {
+  z-index: 2;
+}
+
+.form-container__tab:nth-child(3) {
+  z-index: 1;
+}
+
+.form-container__tab:not(.form-container__tab--active) {
+  background: #aca885;
+  border-color: #aca885;
+  color: #16262e;
+}
+
+.form-container__tab:not(.form-container__tab--active):hover, .form-container__tab:not(.form-container__tab--active):focus {
+  background: transparent;
+  border-color: #16262e;
+}
+
+.form {
+  border-top: 2px solid #d64933;
+  padding-top: 0.75rem;
+}
+
+.form fieldset:last-of-type {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #7a7a7a;
+  margin-bottom: 1rem;
 }
 
 .img-upload__form {
@@ -956,33 +1095,25 @@ textarea {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(135deg, #312244, #212f45);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #16262e, #d64933) no-repeat;
   text-align: center;
-  font-family: "Fontin";
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: unset;
   line-height: unset;
-  color: unset;
+  color: #16262e;
   padding: unset;
 }
 
-main {
+.heading {
+  color: white;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 200;
+}
+
+.card-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -998,16 +1129,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.heading {
-  width: 100%;
-  color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 1rem;
-  font-size: 1.25rem;
-  font-weight: normal;
+  gap: 2.5rem;
+  padding: 4rem;
 }
 /*# sourceMappingURL=app.css.map */

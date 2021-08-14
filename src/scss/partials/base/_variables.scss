@@ -10,6 +10,7 @@ $graphics_path: "/../assets/images/";
  * ********* Fonts *********
  * =========================
  */
+$font_ui: "IBM Plex Sans", sans-serif;
 $font_brush_modern: "Brushtip Texe";
 $font_brush_legacy: "Present Condensed";
 $font_serif: "Fontin";
@@ -19,6 +20,23 @@ $font_serif_smallcaps: "Fontin Small Caps";
  * =========================
  * ******** Colours ********
  * =========================
+ */
+/*
+ * ~~~~~~ Site Colours ~~~~~~
+ */
+$text: #16262e;
+$pop_text: #d64933;
+$bg: #aca885;
+$bg_light: lighten(#aca885, 30%);
+$borders: #474747;
+$borders_light: lighten(#474747, 20%);
+$shadows: darken(#474747, 20%);
+$links: #657ed4;
+$links_alt: #f9b710;
+
+/*
+ * ~~~~~~ Card Colours ~~~~~~
+ * common card elements for all clans
  */
 // scroll foil
 $foil-base: #eeda58;
@@ -33,15 +51,14 @@ $wraps-dark: #0f0f11;
 $wraps-light: #7d7786;
 
 /*
- * ==========================
- * ***** Clan Variables *****
- * ==========================
+ * ~~~~~~ Clan Colours ~~~~~~
+ * scroll main & underlay * changes by clan, but follows same scheme *
+ * $scroll-base: slategray; // original test colours
+ * $scroll-highlight: whitesmoke; // original test colours
+ * $underlay-base: gray; // original test colours
+ * $underlay-highlight: lightgray; // original test colours
  */
-// scroll main & underlay * changes by clan, but follows same scheme *
-// $scroll-base: slategray; // original test colours
-// $scroll-highlight: whitesmoke; // original test colours
-// $underlay-base: gray; // original test colours
-// $underlay-highlight: lightgray; // original test colours
+// unaligned (default)
 $scroll-base: #885445;
 $scroll-secondary: #d4b3a0; // never used - keep for secondary?
 $scroll-highlight: lighten($scroll-base, 5%);
@@ -59,18 +76,6 @@ $underlay-secondary: #b98c63;
 $underlay-highlight: lighten($underlay-secondary, 20%);
 $underlay-shade-1: darken($underlay-base, 20%);
 $underlay-shade-2: darken($underlay-base, 40%);
-
-// lighten($scroll-base, 5%) // replace with scroll-highlight?
-// darken($scroll-base, 10%)
-// darken($scroll-base, 15%)
-// darken($scroll-base, 20%)
-// darken($scroll-base, 30%)
-// darken($scroll-base, 40%)
-// darken($scroll-base, 50%)
-
-// lighten($underlay-highlight, 20%)
-// darken($underlay-base, 20%)
-// darken($underlay-base, 40%)
 
 // crab
 $crab-scroll-base: #2850a0;
