@@ -1,4 +1,4 @@
-import { Form } from "semantic-ui-react";
+// import { Form } from "semantic-ui-react";
 
 const clanOptions = [
   { text: "Crab", value: "crab" },
@@ -25,20 +25,52 @@ function InputForm({ cardState, setCardState }) {
     quote,
   } = cardState;
 
-  const selectOptionsClans = clanOptions.map((clan) => {
+  const selectOptionsClans = clanOptions.map((clan, i) => {
     return (
-      <option
-        value={clan.value}
-        selected={clan.text === "Unaligned" ? true : false}
-      >
+      <option value={clan.value} key={i}>
         {clan.text}
       </option>
     );
   });
 
-  // update internal form state
-  const changeHandler = (e, { name, value, checked }, index) => {
+  const titlesFields = [0, 1, 2].map((i) => {
+    const id = `titles${i}`;
+    return (
+      <label htmlFor={id} key={i}>
+        <span>Title {i + 1}</span>
+        <input
+          type="text"
+          name="titles"
+          id={id}
+          value={titles[i]}
+          onChange={(e, data) => changeHandler(e, i)}
+        />
+      </label>
+    );
+  });
+
+  const keywordsFields = [0, 1, 2].map((i) => {
+    const id = `keywords${i}`;
+    return (
+      <label htmlFor={id} key={i}>
+        <span>Keyword</span>
+        <input
+          type="text"
+          name="keywords"
+          id={id}
+          value={keywords[i]}
+          onChange={(e, data) => changeHandler(e, i)}
+        />
+      </label>
+    );
+  });
+
+  // update internal form state to see changes on card preview
+  const changeHandler = (e, index) => {
     const data = { ...cardState };
+    // console.log("e.target:", e.target);
+    const { name, value, checked } = e.target;
+    // console.log("name, value, checked:", name, value, checked);
 
     if (typeof index === "number") {
       data[name][index] = value;
@@ -51,19 +83,25 @@ function InputForm({ cardState, setCardState }) {
     setCardState(data);
   };
 
-  // send changes up to the parent to give access to Card
+  // save current card to 'Collection' tab
   const updateHandler = () => {
     console.log("button was clicked");
   };
 
   return (
-    <form className="form">
+    <form className="form" onSubmit={updateHandler}>
       <fieldset>
         <label htmlFor="name">
           <span>
             Name <em>(Family, Given)</em>
           </span>
-          <input type="text" name="name" id="name" value={cardState.name} />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={name}
+            onChange={changeHandler}
+          />
         </label>
         <label htmlFor="nameTitle">
           <span>
@@ -73,7 +111,8 @@ function InputForm({ cardState, setCardState }) {
             type="text"
             name="nameTitle"
             id="nameTitle"
-            value={cardState.nameTitle}
+            value={nameTitle}
+            onChange={changeHandler}
           />
         </label>
       </fieldset>
@@ -81,7 +120,7 @@ function InputForm({ cardState, setCardState }) {
       <fieldset>
         <label htmlFor="clan">
           <span>Clan</span>
-          <select name="clan" id="clan">
+          <select name="clan" id="clan" value={clan} onChange={changeHandler}>
             {selectOptionsClans}
           </select>
         </label>
@@ -91,91 +130,45 @@ function InputForm({ cardState, setCardState }) {
             type="checkbox"
             name="experienced"
             id="experienced"
-            value={cardState.experienced}
+            value={experienced}
+            onChange={changeHandler}
           />
           <span>Experienced?</span>
         </label>
 
         <label htmlFor="expLevel">
+          <span>Exp. Level</span>
           <select
             name="expLevel"
             id="expLevel"
-            disabled={!cardState.experienced}
+            disabled={!experienced}
+            onChange={changeHandler}
           >
-            <option value={cardState.expLevel}>1</option>
-            <option value={cardState.expLevel}>2</option>
-            <option value={cardState.expLevel}>3</option>
+            <option value={expLevel}>1</option>
+            <option value={expLevel}>2</option>
+            <option value={expLevel}>3</option>
           </select>
         </label>
       </fieldset>
 
-      <fieldset>
-        <label htmlFor="titles0">
-          <span>Title 1</span>
-          <input
-            type="text"
-            name="titles"
-            id="titles0"
-            value={cardState.titles[0]}
-          />
-        </label>
-        <label htmlFor="titles1">
-          <span>Title 2</span>
-          <input
-            type="text"
-            name="titles"
-            id="titles1"
-            value={cardState.titles[1]}
-          />
-        </label>
-        <label htmlFor="titles2">
-          <span>Title 3</span>
-          <input
-            type="text"
-            name="titles"
-            id="titles2"
-            value={cardState.titles[2]}
-          />
-        </label>
-      </fieldset>
+      <fieldset>{titlesFields}</fieldset>
 
-      <fieldset>
-        <label htmlFor="keywords0">
-          <span>Keyword</span>
-          <input
-            type="text"
-            name="keywords"
-            id="keywords0"
-            value={cardState.keywords[0]}
-          />
-        </label>
-        <label htmlFor="keywords1">
-          <span>Keyword</span>
-          <input
-            type="text"
-            name="keywords"
-            id="keywords1"
-            value={cardState.keywords[1]}
-          />
-        </label>
-        <label htmlFor="keywords2">
-          <span>Keyword</span>
-          <input
-            type="text"
-            name="keywords"
-            id="keywords2"
-            value={cardState.keywords[2]}
-          />
-        </label>
-      </fieldset>
+      <fieldset>{keywordsFields}</fieldset>
 
       <fieldset>
         <label htmlFor="quote">
-          <textarea name="quote" id="quote" value={cardState.quote}></textarea>
+          <textarea
+            name="quote"
+            id="quote"
+            value={quote}
+            onChange={changeHandler}
+          ></textarea>
         </label>
       </fieldset>
 
-      <button type="button">Save Card</button>
+      <button type="button" className="form-container__button">
+        Save Card
+      </button>
     </form>
     // // <section className="form-container">
     // <Form size="small" onSubmit={updateHandler}>

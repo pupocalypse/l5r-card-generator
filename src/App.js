@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Card from "./components/Card";
-import InputForm from "./components/InputForm";
-// import FormContainer from "./components/FormContainer";
+// import InputForm from "./components/InputForm";
+import FormContainer from "./components/FormContainer";
 
 function App() {
-  const [activeTab, setActiveTab] = useState([true, false, false]);
   const [cardState, setCardState] = useState({
     name: "Lastname Firstname",
     nameTitle: "",
@@ -21,10 +20,6 @@ function App() {
     },
   });
 
-  const clickActiveTab = (e) => {
-    let activeTab = activeTab;
-  };
-
   return (
     <div className="App">
       <header>
@@ -34,9 +29,9 @@ function App() {
       <main>
         <div className="card-form">
           <Card cardState={cardState} />
-          <section className="form-container">
-            {/* <FormContainer cardState={cardState} setCardState={setCardState} /> */}
-            <nav className="form-container__nav">
+          {/* <section className="form-container"> */}
+          <FormContainer cardState={cardState} setCardState={setCardState} />
+          {/* <nav className="form-container__nav">
               <button
                 className="form-container__tab form-container__tab--active button"
                 onClick={setActiveTab}
@@ -51,7 +46,7 @@ function App() {
               </button>
             </nav>
             <InputForm cardState={cardState} setCardState={setCardState} />
-          </section>
+          </section> */}
         </div>
       </main>
 

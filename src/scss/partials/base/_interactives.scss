@@ -55,7 +55,7 @@ select {
   &:focus,
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 0.125rem $links;
+    box-shadow: 0 0 0 0.125rem $pop_text;
   }
 }
 
@@ -74,15 +74,25 @@ button[type="button"],
 button[type="submit"],
 .button {
   color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  font-weight: 500;
   background: $pop_text;
   border: 2px solid $pop_text;
   border-radius: 1rem;
-  padding: 0.125rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   transition: all 0.2s ease;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $pop_text;
     background: transparent;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    // box-shadow: 0 0 0 0.125rem $links_alt;
   }
 }
 

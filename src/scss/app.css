@@ -454,8 +454,8 @@ textarea:focus-visible,
 select:focus,
 select:focus-visible {
   outline: none;
-  -webkit-box-shadow: 0 0 0 0.125rem #657ed4;
-          box-shadow: 0 0 0 0.125rem #657ed4;
+  -webkit-box-shadow: 0 0 0 0.125rem #d64933;
+          box-shadow: 0 0 0 0.125rem #d64933;
 }
 
 textarea {
@@ -474,21 +474,40 @@ button[type="submit"],
 .button,
 .button--secondary {
   color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  font-weight: 500;
   background: #d64933;
   border: 2px solid #d64933;
   border-radius: 1rem;
-  padding: 0.125rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
-button:hover,
+button:hover, button:focus,
 button[type="button"]:hover,
+button[type="button"]:focus,
 button[type="submit"]:hover,
+button[type="submit"]:focus,
 .button:hover,
-.button--secondary:hover {
+.button--secondary:hover,
+.button:focus,
+.button--secondary:focus {
   color: #d64933;
   background: transparent;
+}
+
+button:focus, button:focus-visible,
+button[type="button"]:focus,
+button[type="button"]:focus-visible,
+button[type="submit"]:focus,
+button[type="submit"]:focus-visible,
+.button:focus,
+.button--secondary:focus,
+.button:focus-visible,
+.button--secondary:focus-visible {
+  outline: none;
 }
 
 .button--secondary {
@@ -998,6 +1017,7 @@ button[type="submit"]:hover,
 .form-container {
   width: 60%;
   max-width: 40rem;
+  min-height: 28rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -1010,6 +1030,10 @@ button[type="submit"]:hover,
   text-align: left;
 }
 
+.form-container__nav {
+  border-bottom: 2px solid #d64933;
+}
+
 .form-container__tab {
   font-weight: 500;
   margin: 0 -2px;
@@ -1019,6 +1043,8 @@ button[type="submit"]:hover,
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
   position: relative;
+  -webkit-box-shadow: 0.125rem 0 0.25rem rgba(20, 20, 20, 0.2);
+          box-shadow: 0.125rem 0 0.25rem rgba(20, 20, 20, 0.2);
 }
 
 .form-container__tab:first-child, .form-container__tab:last-child {
@@ -1048,8 +1074,7 @@ button[type="submit"]:hover,
   border-color: #16262e;
 }
 
-.form {
-  border-top: 2px solid #d64933;
+.form-container__pane {
   padding-top: 0.75rem;
 }
 
@@ -1094,6 +1119,16 @@ button[type="submit"]:hover,
   --underlay-shade-2: black;
 }
 
+::-moz-selection {
+  color: #16262e;
+  background: #fbd574;
+}
+
+::selection {
+  color: #16262e;
+  background: #fbd574;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
@@ -1130,6 +1165,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 2.5rem;
-  padding: 4rem;
+  padding: 2rem 4rem;
 }
 /*# sourceMappingURL=app.css.map */

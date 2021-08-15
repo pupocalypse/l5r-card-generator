@@ -1,9 +1,7 @@
 // general ui
-// @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&family=Nanum+Gothic&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;500&family=Josefin+Sans:wght@300;500&family=Nanum+Gothic&display=swap");
 
-// character names
+// character names (modern)
 @font-face {
   font-family: "Brushtip Texe";
   src: url("../assets/fonts/BrushtipTexe.otf") format("opentype");
@@ -11,7 +9,7 @@
   font-style: normal;
 }
 
-// character names * alt *
+// character names * alt * (legacy)
 @font-face {
   font-family: "Present Condensed";
   src: url("../assets/fonts/L5RTitles_0.ttf") format("truetype");
@@ -19,6 +17,7 @@
   font-style: normal;
 }
 
+// card serif
 @font-face {
   font-family: "Fontin";
   src: url("../assets/fonts/Fontin-Regular.ttf") format("truetype");

@@ -27,12 +27,15 @@
   --underlay-shade-2: #{$underlay-shade-2};
 }
 
+::selection {
+  color: $text;
+  background: lighten($links_alt, 20%);
+}
+
 body {
   width: 100%;
   min-height: 100vh;
-  // background: linear-gradient(135deg, #312244, #212f45);
   background: linear-gradient(135deg, $text, $pop_text) no-repeat;
-  // @include flex();
   text-align: center;
   font-family: $font_ui;
   font-size: unset;
@@ -70,5 +73,5 @@ body {
 .card-form {
   @include flex();
   gap: 2.5rem;
-  padding: 4rem;
+  padding: 2rem 4rem;
 }
