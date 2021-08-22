@@ -1,17 +1,64 @@
 .img-upload {
   &__form {
     width: 100%;
+    position: relative;
   }
 
-  &__input {
+  &__input-placeholder {
+    width: 75%;
     position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    clip-path: inset(50%);
-    border: 0;
+    top: -2.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__buttons-wrapper {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__upload-button {
+    display: inline-block;
+    width: fit-content;
+  }
+
+  &__file-name {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.875rem;
+    text-align: center;
+    margin: 0.5rem;
+  }
+}
+
+.img-edit {
+  width: 100%;
+  height: 14rem;
+  border: 2px double rgba($text, 0.5);
+  margin-bottom: 4rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba($shadows, 0.4);
+  }
+
+  &::after {
+    content: "";
+    width: 164px;
+    height: 155px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid white;
+    background: $bg_light;
+    transform: translate(-50%, -50%);
   }
 }

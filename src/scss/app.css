@@ -375,6 +375,19 @@ table {
   --underlay-shade-2: #1a0c10;
 }
 
+.vis-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  border: 0;
+}
+
 /*
 ===================================
 ************** FORMS **************
@@ -461,6 +474,139 @@ select:focus-visible {
 textarea {
   resize: none;
   min-height: calc(3rem + (0.5rem * 2));
+}
+
+/**
+ * adapted from https://github.com/darlanrod/input-range-scss/blob/master/example/inputrange.css
+ */
+[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 12px 0;
+  width: 100%;
+}
+
+[type="range"][disabled] {
+  opacity: 0.5;
+}
+
+[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+
+[type="range"]:focus {
+  outline: 0;
+}
+
+[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #7a7a7a;
+}
+
+[type="range"]:focus::-ms-fill-lower {
+  background: #c1bea3;
+}
+
+[type="range"]:focus::-ms-fill-upper {
+  background: #7a7a7a;
+}
+
+[type="range"]::-webkit-slider-runnable-track {
+  cursor: default;
+  height: 8px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 100%;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(13, 13, 13, 0.2);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(13, 13, 13, 0.2);
+  background: #c1bea3;
+  border: 2px solid #878787;
+  border-radius: 5px;
+}
+
+[type="range"]::-webkit-slider-thumb {
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2), 0 0 4px rgba(13, 13, 13, 0.2);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2), 0 0 4px rgba(13, 13, 13, 0.2);
+  background: #d64933;
+  border: 2px solid #fef3d7;
+  border-radius: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: default;
+  height: 24px;
+  width: 24px;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
+
+[type="range"]::-moz-range-track {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(13, 13, 13, 0.2);
+  cursor: default;
+  height: 8px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 100%;
+  background: #c1bea3;
+  border: 2px solid #878787;
+  border-radius: 5px;
+  height: 4px;
+}
+
+[type="range"]::-moz-range-thumb {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2), 0 0 4px rgba(13, 13, 13, 0.2);
+  background: #d64933;
+  border: 2px solid #fef3d7;
+  border-radius: 12px;
+  box-sizing: border-box;
+  cursor: default;
+  height: 24px;
+  width: 24px;
+}
+
+[type="range"]::-ms-track {
+  cursor: default;
+  height: 8px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 100%;
+  background: transparent;
+  border-color: transparent;
+  border-width: 12px 0;
+  color: transparent;
+}
+
+[type="range"]::-ms-fill-lower {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(13, 13, 13, 0.2);
+  background: #aca885;
+  border: 2px solid #878787;
+  border-radius: 10px;
+}
+
+[type="range"]::-ms-fill-upper {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0 0 1px rgba(13, 13, 13, 0.2);
+  background: #c1bea3;
+  border: 2px solid #878787;
+  border-radius: 10px;
+}
+
+[type="range"]::-ms-thumb {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2), 0 0 4px rgba(13, 13, 13, 0.2);
+  background: #d64933;
+  border: 2px solid #fef3d7;
+  border-radius: 12px;
+  box-sizing: border-box;
+  cursor: default;
+  height: 24px;
+  width: 24px;
+  margin-top: 2px;
+}
+
+[type="range"]:disabled::-webkit-slider-thumb,
+[type="range"]:disabled::-moz-range-thumb,
+[type="range"]:disabled::-ms-thumb,
+[type="range"]:disabled::-webkit-slider-runnable-track,
+[type="range"]:disabled::-ms-fill-lower,
+[type="range"]:disabled::-ms-fill-upper {
+  cursor: not-allowed;
 }
 
 /*
@@ -1086,19 +1232,73 @@ button[type="submit"]:focus-visible,
 
 .img-upload__form {
   width: 100%;
+  position: relative;
 }
 
-.img-upload__input {
+.img-upload__input-placeholder {
+  width: 75%;
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
-  border: 0;
+  top: -2.7rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.img-upload__buttons-wrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.img-upload__upload-button {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.img-upload__file-name {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.875rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.img-edit {
+  width: 100%;
+  height: 14rem;
+  border: 2px double rgba(22, 38, 46, 0.5);
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.img-edit::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(20, 20, 20, 0.4);
+}
+
+.img-edit::after {
+  content: "";
+  width: 164px;
+  height: 155px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid white;
+  background: #eae9e0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 :root {

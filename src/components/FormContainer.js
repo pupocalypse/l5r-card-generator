@@ -2,7 +2,7 @@
 import { useState } from "react";
 import FormNav from "./FormNav";
 import InputForm from "./InputForm";
-// import ImageUpload from "./ImageUpload";
+import ImageUpload from "./ImageUpload";
 
 function FormContainer({ cardState, setCardState }) {
   const [activeTab, setActiveTab] = useState([true, false, false]);
@@ -18,7 +18,7 @@ function FormContainer({ cardState, setCardState }) {
     if (details) {
       return <InputForm cardState={cardState} setCardState={setCardState} />;
     } else if (upload) {
-      return <p>Nothing here yet</p>;
+      return <ImageUpload cardState={cardState} setCardState={setCardState} />;
     } else if (collection) {
       return <p>Nothing here yet</p>;
     }

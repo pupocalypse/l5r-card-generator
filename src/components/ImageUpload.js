@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Button } from "semantic-ui-react";
 import Croppie from "croppie";
 
 function ImageUpload({ cardState, setCardState }) {
@@ -14,12 +13,12 @@ function ImageUpload({ cardState, setCardState }) {
 
   useEffect(() => {
     const croppieRef = croppieContainer.current;
+    const card = { ...cardState };
     const event = () => {
       croppie.result("blob").then((result) => {
         result = URL.createObjectURL(result);
-        const data = { ...cardState };
-        data.photo.cropped = result;
-        setCardState(data);
+        card.photo.cropped = result;
+        setCardState(card);
       });
     };
     if (croppie != null) {
@@ -27,6 +26,8 @@ function ImageUpload({ cardState, setCardState }) {
       return () => {
         croppieRef?.removeEventListener("update", event);
       };
+    } else if (card.photo.original) {
+      addCroppieInstance(card.photo.original);
     }
   }, [cardState, setCardState, croppie]);
 
@@ -42,40 +43,66 @@ function ImageUpload({ cardState, setCardState }) {
   };
 
   const changeImage = (e) => {
-    const data = { ...cardState };
-    data.photo.original = URL.createObjectURL(e.target.files[0]);
-    data.photo.cropped = URL.createObjectURL(e.target.files[0]);
-    setCardState(data);
-    addCroppieInstance(data.photo.original);
+    const card = { ...cardState };
+    card.photo.original = URL.createObjectURL(e.target.files[0]);
+    card.photo.cropped = URL.createObjectURL(e.target.files[0]);
+    card.photo.filename = e.target.files[0].name;
+    setCardState(card);
+    addCroppieInstance(card.photo.original);
+  };
+
+  const resetImage = (e) => {
+    e.preventDefault();
+    const card = { ...cardState };
+    card.photo.original = null;
+    card.photo.cropped = null;
+    card.photo.filename = "";
+    setCroppie(null);
+    setCardState(card);
   };
 
   return (
     <>
-      <div
-        className="img-edit"
-        id="img-edit"
-        ref={croppieContainer}
-        style={{ width: "50%", height: "12rem" }}
-      ></div>
+      <div className="img-edit" id="img-edit" ref={croppieContainer}></div>
       <div className="img-upload">
         <form className="img-upload__form">
-          <Button
-            as="label"
-            htmlFor="file-upload"
-            circular
-            type="button"
-            size="mini"
-          >
+          <p className="img-upload__file-name">
+            {cardState.photo.filename
+              ? cardState.photo.filename
+              : "no file selected"}
+          </p>
+          {cardState.photo.original ? (
+            ""
+          ) : (
             <input
-              className="img-upload__input"
-              type="file"
-              id="file-upload"
-              name="file-upload"
-              accept="image/*"
-              onChange={changeImage}
+              type="range"
+              className="img-upload__input-placeholder"
+              step="0.0001"
+              min="0.2901"
+              max="1.5000"
+              value="0.5508"
+              disabled
             />
-            Choose a file
-          </Button>
+          )}
+          <div className="img-upload__buttons-wrapper">
+            <label
+              className="img-upload__upload-button button"
+              htmlFor="file-upload"
+            >
+              <input
+                type="file"
+                className="img-upload__input vis-hidden"
+                id="file-upload"
+                name="file-upload"
+                accept="image/*"
+                onChange={changeImage}
+              />
+              Choose a file
+            </label>
+            <button className="button" onClick={resetImage} type="button">
+              Reset
+            </button>
+          </div>
         </form>
       </div>
     </>
