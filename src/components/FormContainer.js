@@ -23,27 +23,7 @@ function FormContainer({ cardState, setCardState }) {
       return <p>Nothing here yet</p>;
     }
   };
-  // const panes = [
-  //   {
-  //     menuItem: "Text",
-  //     render: () => (
-  //       <Tab.Pane attached={false}>
-  //         <InputForm cardState={cardState} setCardState={setCardState} />
-  //       </Tab.Pane>
-  //     ),
-  //   },
-  //   {
-  //     menuItem: "Upload Image",
-  //     render: () => (
-  //       <Tab.Pane attached={false}>
-  //         <h2>Image Uploader goes here</h2>
-  //         <ImageUpload cardState={cardState} setCardState={setCardState} />
-  //       </Tab.Pane>
-  //     ),
-  //   },
-  // ];
 
-  // return <Tab menu={{ secondary: true, pointing: true }} panes={panes} />;
   return (
     <section className="form-container">
       <FormNav activeTab={activeTab} clickActiveTab={clickActiveTab} />

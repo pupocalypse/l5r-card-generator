@@ -238,6 +238,18 @@
         filter: grayscale(0.75) contrast(135%) brightness(1.1);
         overflow: hidden;
       }
+
+      // for optional clan mon
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.3;
+      }
     }
 
     &-end {
@@ -477,4 +489,43 @@
     font-size: 0.75rem;
     margin-top: -0.75rem;
   }
+}
+
+// scroll backdrop clan mon overlays
+.crab .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Crab.gif") center no-repeat;
+  background-size: auto 82%;
+  // filter: invert(24%) sepia(98%) saturate(938%) hue-rotate(196deg)
+  //   brightness(91%) contrast(92%) saturate(80%);
+  filter: invert(75%) sepia(22%) saturate(6741%) hue-rotate(186deg)
+    brightness(107%) contrast(101%) brightness(60%);
+}
+.crane .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Crane.gif") center no-repeat;
+  background-size: auto 82%;
+  filter: invert(81%) sepia(32%) saturate(707%) hue-rotate(162deg)
+    brightness(90%) contrast(89%) brightness(80%);
+}
+.dragon .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Dragon.gif") center no-repeat;
+  background-size: auto 82%;
+}
+.lion .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Lion.gif") center no-repeat;
+  background-size: auto 82%;
+}
+.phoenix .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Phoenix.gif") center
+    no-repeat;
+  background-size: auto 82%;
+}
+.scorpion .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Scorpion.gif") center
+    no-repeat;
+  background-size: auto 82%;
+}
+.unicorn .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Unicorn.gif") center
+    no-repeat;
+  background-size: auto 82%;
 }

@@ -22,12 +22,13 @@ function ImageUpload({ cardState, setCardState }) {
       });
     };
     if (croppie != null) {
+      // console.log("croppie.get():", croppie.get());
       croppieRef.addEventListener("update", event);
       return () => {
         croppieRef?.removeEventListener("update", event);
       };
-    } else if (card.photo.original) {
-      addCroppieInstance(card.photo.original);
+      // } else {
+      //   console.log("useEffect triggered");
     }
   }, [cardState, setCardState, croppie]);
 
