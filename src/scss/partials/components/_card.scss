@@ -509,23 +509,46 @@
 .dragon .card__scroll-backdrop::after {
   background: url("../assets/images/mons-black/Mon_Dragon.gif") center no-repeat;
   background-size: auto 82%;
+  filter: invert(64%) sepia(90%) saturate(377%) hue-rotate(19deg)
+    brightness(101%) contrast(99%);
 }
 .lion .card__scroll-backdrop::after {
   background: url("../assets/images/mons-black/Mon_Lion.gif") center no-repeat;
   background-size: auto 82%;
+  filter: invert(60%) sepia(8%) saturate(2964%) hue-rotate(353deg)
+    brightness(90%) contrast(83%);
+}
+.mantis .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-black/Mon_Mantis.gif") center no-repeat;
+  background-size: auto 82%;
+  filter: invert(45%) sepia(48%) saturate(639%) hue-rotate(97deg)
+    brightness(100%) contrast(96%);
 }
 .phoenix .card__scroll-backdrop::after {
   background: url("../assets/images/mons-black/Mon_Phoenix.gif") center
     no-repeat;
   background-size: auto 82%;
+  filter: invert(59%) sepia(12%) saturate(7391%) hue-rotate(348deg)
+    brightness(90%) contrast(98%);
 }
 .scorpion .card__scroll-backdrop::after {
   background: url("../assets/images/mons-black/Mon_Scorpion.gif") center
     no-repeat;
   background-size: auto 82%;
+  filter: invert(14%) sepia(100%) saturate(4143%) hue-rotate(351deg)
+    brightness(77%) contrast(92%);
+}
+.spider .card__scroll-backdrop::after {
+  background: url("../assets/images/mons-colour/Mon_Spider_colour.png") center
+    no-repeat;
+  background-size: auto 82%;
+  filter: invert(46%) sepia(91%) saturate(0%) hue-rotate(214deg)
+    brightness(103%) contrast(95%);
 }
 .unicorn .card__scroll-backdrop::after {
   background: url("../assets/images/mons-black/Mon_Unicorn.gif") center
     no-repeat;
   background-size: auto 82%;
+  filter: invert(74%) sepia(83%) saturate(6523%) hue-rotate(237deg)
+    brightness(85%) contrast(75%);
 }
