@@ -30,7 +30,7 @@ function InputForm({ cardState, setCardState }) {
           name="titles"
           id={id}
           value={titles[i]}
-          onChange={(e, data) => changeHandler(e, i)}
+          onChange={(e) => changeHandler(e, i)}
         />
       </label>
     );
@@ -46,7 +46,7 @@ function InputForm({ cardState, setCardState }) {
           name="keywords"
           id={id}
           value={keywords[i]}
-          onChange={(e, data) => changeHandler(e, i)}
+          onChange={(e) => changeHandler(e, i)}
         />
       </label>
     );
@@ -54,18 +54,33 @@ function InputForm({ cardState, setCardState }) {
 
   // update internal form state to see changes on card preview
   const changeHandler = (e, index) => {
-    const data = { ...cardState };
+    const card = { ...cardState };
     const { name, value, checked } = e.target;
 
-    if (typeof index === "number") {
-      data[name][index] = value;
-    } else if (typeof checked === "boolean") {
-      data[name] = checked;
+    // if (typeof index === "number") {
+    //   console.log(`${name} is a number:`, value);
+    //   card[name][index] = value;
+    // } else if (typeof checked === "boolean") {
+    //   console.log(`${name} is a boolean:`, checked);
+    //   card[name] = checked;
+    // } else {
+    //   console.log(`${name} is a string:`, value);
+    //   card[name] = value;
+    // }
+
+    if (
+      (name === "titles" || name === "keywords") &&
+      typeof index === "number"
+    ) {
+      card[name][index] = value;
+    } else if (name === "experienced") {
+      card[name] = checked;
     } else {
-      data[name] = value;
+      card[name] = value;
     }
 
-    setCardState(data);
+    setCardState(card);
+    console.log("cardState:", cardState);
   };
 
   // TO DO: save current card to 'Collection' tab
@@ -128,10 +143,11 @@ function InputForm({ cardState, setCardState }) {
             id="expLevel"
             disabled={!experienced}
             onChange={changeHandler}
+            value={expLevel}
           >
-            <option value={expLevel}>1</option>
-            <option value={expLevel}>2</option>
-            <option value={expLevel}>3</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
           </select>
         </label>
       </fieldset>
