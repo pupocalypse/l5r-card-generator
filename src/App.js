@@ -15,9 +15,15 @@ function App() {
     quote:
       "Optional quote from this character that probably takes up a couple of lines and maybe, just maybe, a third one as well?",
     photo: {
-      original: null,
+      original: "",
       cropped: null,
       filename: "",
+      position: {
+        startX: 0,
+        startY: 0,
+        newX: 0,
+        newY: 0,
+      },
     },
   });
 

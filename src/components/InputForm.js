@@ -80,7 +80,6 @@ function InputForm({ cardState, setCardState }) {
     }
 
     setCardState(card);
-    console.log("cardState:", cardState);
   };
 
   // TO DO: save current card to 'Collection' tab
@@ -89,7 +88,7 @@ function InputForm({ cardState, setCardState }) {
   };
 
   return (
-    <form className="form" onSubmit={updateHandler}>
+    <form id="form" className="form" onSubmit={updateHandler} role="tabpanel">
       <fieldset>
         <label htmlFor="name">
           <span>

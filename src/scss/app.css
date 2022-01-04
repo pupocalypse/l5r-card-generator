@@ -699,6 +699,12 @@ button[type="submit"]:focus-visible,
   left: 0;
 }
 
+@media print {
+  .card::after {
+    content: unset;
+  }
+}
+
 .card__name-banner {
   width: 100%;
   height: 10%;
@@ -819,7 +825,9 @@ button[type="submit"]:focus-visible,
 .card__image {
   width: calc(100% - 0.5in);
   height: 51%;
-  background: url("https://place-puppy.com/300x300");
+  background: gainsboro;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.6))), url("../assets/images/noface_samurai.png");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../assets/images/noface_samurai.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1123,10 +1131,9 @@ button[type="submit"]:focus-visible,
 
 .card__scroll-inner-text {
   width: 100%;
+  height: calc(100% - (1.125rem * 2));
   display: block;
-  padding: 1.35rem 0.5rem;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  padding: 0.25rem 0.5rem 0.5rem;
   font-family: "Fontin";
 }
 
@@ -1331,75 +1338,63 @@ button[type="submit"]:focus-visible,
           transform: translateX(-50%);
 }
 
-.img-upload__form {
+.img-upload {
   width: 100%;
+  max-width: 24rem;
+  margin: 1rem auto 0;
+}
+
+.preview-container {
+  width: 24rem;
+  height: 18rem;
+  min-width: 12.5rem;
+  min-height: 11.9375rem;
+  max-width: 30rem;
+  max-height: 22rem;
   position: relative;
-}
-
-.img-upload__input-placeholder {
-  width: 75%;
-  position: absolute;
-  top: -2.7rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.img-upload__buttons-wrapper {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 0 auto;
+  z-index: 1;
+  border: 2px solid #7a7a7a;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
 }
 
-.img-upload__upload-button {
-  display: inline-block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.img-upload__file-name {
-  font-style: italic;
-  font-weight: 300;
-  font-size: 0.875rem;
-  text-align: center;
-  margin: 0.5rem;
-}
-
-.img-edit {
-  width: 100%;
-  height: 14rem;
-  border: 2px double rgba(22, 38, 46, 0.5);
-  margin-bottom: 4rem;
+.preview-container__live-area {
+  width: 10.5rem;
+  height: 9.9375rem;
+  border: 2px solid whitesmoke;
+  -webkit-box-shadow: 0 0 0 100rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 100rem rgba(0, 0, 0, 0.4);
+  pointer-events: none;
   position: relative;
 }
 
-.img-edit::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(20, 20, 20, 0.4);
-}
-
-.img-edit::after {
-  content: "";
-  width: 164px;
-  height: 155px;
+.preview-container__live-area img {
+  max-height: 120%;
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 2px solid white;
-  background: #eae9e0;
+  z-index: -1;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.preview-container__live-area img.horizontal {
+  max-height: 120%;
+  max-width: initial;
+}
+
+.preview-container__live-area img.vertical {
+  max-width: 120%;
+  max-height: initial;
 }
 
 :root {

@@ -28,6 +28,10 @@
     border: 1px solid cyan;
     top: 0;
     left: 0;
+
+    @media print {
+      content: unset;
+    }
   }
 
   &__name-banner {
@@ -136,8 +140,9 @@
   &__image {
     width: calc(100% - 0.5in);
     height: 51%;
-    // background: darken(whitesmoke, 10%);
-    background: url("https://place-puppy.com/300x300");
+    background: darken(whitesmoke, 10%);
+    background: linear-gradient(to bottom, rgba(black, 0.2), rgba(black, 0.6)),
+      url("../assets/images/noface_samurai.png");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -442,9 +447,9 @@
 
     &-inner-text {
       width: 100%;
+      height: calc(100% - (1.125rem * 2));
       display: block;
-      padding: 1.35rem 0.5rem;
-      align-self: flex-start;
+      padding: 0.25rem 0.5rem 0.5rem;
       font-family: "Fontin";
     }
 
@@ -495,8 +500,6 @@
 .crab .card__scroll-backdrop::after {
   background: url("../assets/images/mons-black/Mon_Crab.gif") center no-repeat;
   background-size: auto 82%;
-  // filter: invert(24%) sepia(98%) saturate(938%) hue-rotate(196deg)
-  //   brightness(91%) contrast(92%) saturate(80%);
   filter: invert(75%) sepia(22%) saturate(6741%) hue-rotate(186deg)
     brightness(107%) contrast(101%) brightness(60%);
 }
