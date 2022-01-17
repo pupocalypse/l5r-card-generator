@@ -84,14 +84,17 @@
 
 .preview-container__live-area {
   width: 10.5rem;
-  height: 9.9375rem;
+  // height: 9.9375rem;
+  height: 10.5rem;
   border: 2px solid whitesmoke;
   box-shadow: 0 0 0 100rem rgba(black, 0.4);
   pointer-events: none;
   position: relative;
 
   img {
-    max-height: 120%; // fallback for square images
+    min-width: calc(100% + 4px);
+    min-height: calc(100% + 4px);
+    height: 120%; // fallback for square images
     position: absolute;
     top: 50%;
     left: 50%;
@@ -100,12 +103,12 @@
     pointer-events: auto;
 
     &.horizontal {
-      max-height: 120%;
-      max-width: initial;
+      height: 120%;
+      width: initial;
     }
     &.vertical {
-      max-width: 120%;
-      max-height: initial;
+      width: 120%;
+      height: initial;
     }
   }
 }

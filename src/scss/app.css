@@ -1368,7 +1368,7 @@ button[type="submit"]:focus-visible,
 
 .preview-container__live-area {
   width: 10.5rem;
-  height: 9.9375rem;
+  height: 10.5rem;
   border: 2px solid whitesmoke;
   -webkit-box-shadow: 0 0 0 100rem rgba(0, 0, 0, 0.4);
           box-shadow: 0 0 0 100rem rgba(0, 0, 0, 0.4);
@@ -1377,7 +1377,9 @@ button[type="submit"]:focus-visible,
 }
 
 .preview-container__live-area img {
-  max-height: 120%;
+  min-width: calc(100% + 4px);
+  min-height: calc(100% + 4px);
+  height: 120%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1388,13 +1390,13 @@ button[type="submit"]:focus-visible,
 }
 
 .preview-container__live-area img.horizontal {
-  max-height: 120%;
-  max-width: initial;
+  height: 120%;
+  width: initial;
 }
 
 .preview-container__live-area img.vertical {
-  max-width: 120%;
-  max-height: initial;
+  width: 120%;
+  height: initial;
 }
 
 :root {
