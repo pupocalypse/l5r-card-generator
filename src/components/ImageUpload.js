@@ -1,148 +1,30 @@
-// import { useState, useEffect, useRef } from "react";
-// import Croppie from "croppie";
-
-import { useState, useEffect, useRef } from "react/cjs/react.development";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useContext,
+} from "react/cjs/react.development";
+import { CardContext } from "../App";
 import { absolutePosition } from "../js/utility";
 
-// function ImageUpload({ cardState, setCardState }) {
-//   const [croppie, setCroppie] = useState(null);
-//   const croppieContainer = useRef();
-//   const options = {
-//     viewport: {
-//       width: 168,
-//       height: 159,
-//     },
-//     boundary: {
-//       width: "100%",
-//       height: "14rem",
-//     },
-//   };
-
-//   console.log("croppie:", croppie);
-//   console.log("croppieContainer:", croppieContainer);
-
-//   useEffect(() => {
-//     // console.log("useEffect triggered");
-//     const croppieRef = croppieContainer.current;
-//     console.log("croppieRef:", croppieRef);
-//     const card = { ...cardState };
-
-//     const event = () => {
-//       console.log("update event on croppieRef was run");
-//       croppie.result("blob").then((result) => {
-//         result = URL.createObjectURL(result);
-//         card.photo.cropped = result;
-//         setCardState(card);
-//       });
-//     };
-
-//     if (croppie != null) {
-//       console.log("croppie is not null, proceeding to set cropped card state");
-//       croppieRef.addEventListener("update", event);
-//       return () => {
-//         croppieRef?.removeEventListener("update", event);
-//       };
-//     }
-
-//     addCroppieInstance();
-//   });
-//   // }, [cardState, setCardState, croppie]);
-
-//   const addCroppieInstance = (photo) => {
-//     let croppieInstance;
-//     if (!croppie) {
-//       croppieInstance = new Croppie(croppieContainer.current, options);
-//     } else {
-//       croppieInstance = croppie;
-//     }
-//     croppieInstance.bind({ url: photo });
-//     setCroppie(croppieInstance);
-//   };
-
-//   // const changeImage = (e) => {
-//   //   const card = { ...cardState };
-//   //   card.photo.original = URL.createObjectURL(e.target.files[0]);
-//   //   card.photo.cropped = URL.createObjectURL(e.target.files[0]);
-//   //   card.photo.filename = e.target.files[0].name;
-//   //   setCardState(card);
-//   //   addCroppieInstance(card.photo.original);
-//   // };
-
-//   // const resetImage = (e) => {
-//   //   e.preventDefault();
-//   //   // const card = { ...cardState };
-//   //   // card.photo.original = null;
-//   //   // card.photo.cropped = null;
-//   //   // card.photo.filename = "";
-//   //   // setCroppie(null);
-//   //   // setCardState(card);
-//   // };
-
-//   return (
-//     <div id="img-uploader" className="uploader" role="tabpanel">
-//       <div className="img-edit" id="croppie" ref={croppieContainer}></div>
-//       {/* <div className="img-edit" id="croppie"></div> */}
-//       <div className="img-upload">
-//         <form className="img-upload__form">
-//           <p className="img-upload__file-name">
-//             {cardState.photo.filename
-//               ? cardState.photo.filename
-//               : "no file selected"}
-//           </p>
-//           {/* {croppie ? (
-//             ""
-//           ) : (
-//             <input
-//               type="range"
-//               className="img-upload__input-placeholder"
-//               step="0.0001"
-//               min="0.2901"
-//               max="1.5000"
-//               value="0.5508"
-//               disabled
-//             />
-//           )} */}
-//           <div className="img-upload__buttons-wrapper">
-//             <label
-//               className="img-upload__upload-button button"
-//               htmlFor="file-upload"
-//             >
-//               <input
-//                 type="file"
-//                 className="img-upload__input vis-hidden"
-//                 id="file-upload"
-//                 name="file-upload"
-//                 accept="image/*"
-//                 // onChange={changeImage}
-//               />
-//               Choose a file
-//             </label>
-//             {/* <button className="button" onClick={resetImage} type="button"> */}
-//             <button className="button" type="button">
-//               Reset
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default ImageUpload;
-
-function ImageUpload({ cardState, setCardState }) {
+function ImageUpload() {
+  const { cardDetails, setCardDetails } = useContext(CardContext);
   let imageRef = useRef(null),
     resetRef = useRef(null),
     resizeRef = useRef(null),
     liveAreaRef = useRef(null),
     liveAreaRectRef = useRef(null);
-  let { startX, startY, newX, newY } = cardState.photo.position;
-  const [sliderVal, setSliderVal] = useState(120);
+  let startX = 0,
+    startY = 0,
+    newX = 0,
+    newY = 0;
+  const [imagePos, setImagePos] = useState(cardDetails.photo.position);
+  const [sliderVal, setSliderVal] = useState(cardDetails.photo.scale);
 
+  // adjust image size on slider change
   useEffect(() => {
     liveAreaRectRef.current = absolutePosition(liveAreaRef.current);
     let sliderMax = liveAreaRectRef.current.width * 4;
-    console.log("sliderMax:", sliderMax);
 
     if (imageRef.current.style.width > imageRef.current.style.height) {
       imageRef.current.classList.add("horizontal");
@@ -152,15 +34,6 @@ function ImageUpload({ cardState, setCardState }) {
       // default horizontal for square images
       imageRef.current.classList.add("horizontal");
     }
-    console.log("imageRef.current:", imageRef.current);
-    console.log(
-      "imageRef.current.naturalWidth:",
-      imageRef.current.naturalWidth
-    );
-    console.log(
-      "imageRef.current.naturalHeight:",
-      imageRef.current.naturalHeight
-    );
 
     // change slider max value if intrinsic image size is less
     if (
@@ -190,6 +63,27 @@ function ImageUpload({ cardState, setCardState }) {
     }
 
     previewImage();
+  }, [sliderVal]);
+
+  // store current image size and position in cardDetails before unmounting
+  useEffect(() => {
+    console.log("inside mounting useEffect");
+    console.log("current cardDetails.photo:", cardDetails.photo);
+    const imageRect = absolutePosition(imageRef.current);
+    // console.log("imageRect:", imageRect);
+    return () => {
+      console.log("cleanup function running");
+      console.log("sliderVal:", sliderVal);
+      // console.log("imageRef.current.style.top:", imageRef.current.style.top);
+      // console.log("imageRef.current.style.left:", imageRef.current.style.left);
+      cardDetails.photo.position = {
+        top: Math.floor(imageRect.top),
+        left: Math.floor(imageRect.left),
+      };
+      cardDetails.photo.scale = sliderVal;
+      setCardDetails(cardDetails);
+      console.log("updated cardDetails.photo:", cardDetails.photo);
+    };
   }, [sliderVal]);
 
   const previewImage = (e) => {
@@ -239,7 +133,7 @@ function ImageUpload({ cardState, setCardState }) {
 
   const resizeImage = (e) => {
     resizeRef.current.value = e.target.value;
-    const newVal = e.target.value + "%";
+    const newVal = resizeRef.current.value + "%";
 
     if (imageRef.current.classList.contains("horizontal")) {
       imageRef.current.style.height = newVal;
@@ -287,7 +181,7 @@ function ImageUpload({ cardState, setCardState }) {
       imageRef.current.style.left = newLeft + "px";
     }
 
-    setSliderVal(e.target.value);
+    setSliderVal(parseInt(resizeRef.current.value));
   };
 
   const mouseDownHandler = (e) => {

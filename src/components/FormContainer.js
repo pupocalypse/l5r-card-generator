@@ -1,24 +1,25 @@
-// import { Tab } from "semantic-ui-react";
 import { useState } from "react";
 import FormNav from "./FormNav";
 import InputForm from "./InputForm";
 import ImageUpload from "./ImageUpload";
 
-function FormContainer({ cardState, setCardState }) {
+function FormContainer() {
   const [activeTab, setActiveTab] = useState([true, false, false]);
   const [details, upload, collection] = activeTab;
 
-  const clickActiveTab = (e, index) => {
+  const clickActiveTab = (_e, index) => {
     let data = activeTab;
-    data = data.map((tab, i) => i === index);
+    data = data.map((_tab, i) => i === index);
     setActiveTab(data);
   };
 
   const tabView = () => {
     if (details) {
-      return <InputForm cardState={cardState} setCardState={setCardState} />;
+      // return <InputForm cardState={cardState} setCardState={setCardState} />;
+      return <InputForm />;
     } else if (upload) {
-      return <ImageUpload cardState={cardState} setCardState={setCardState} />;
+      // return <ImageUpload cardState={cardState} setCardState={setCardState} />;
+      return <ImageUpload />;
     } else if (collection) {
       return <p>Nothing here yet</p>;
     }

@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { CardContext } from "../App";
 const { clanOptions } = require("../js/formData");
 
-function InputForm({ cardState, setCardState }) {
+function InputForm() {
+  const { cardDetails, setCardDetails } = useContext(CardContext);
   const {
     name,
     nameTitle,
@@ -10,7 +13,7 @@ function InputForm({ cardState, setCardState }) {
     titles,
     keywords,
     quote,
-  } = cardState;
+  } = cardDetails;
 
   const selectOptionsClans = clanOptions.map((clan, i) => {
     return (
@@ -54,7 +57,7 @@ function InputForm({ cardState, setCardState }) {
 
   // update internal form state to see changes on card preview
   const changeHandler = (e, index) => {
-    const card = { ...cardState };
+    const card = { ...cardDetails };
     const { name, value, checked } = e.target;
 
     // if (typeof index === "number") {
@@ -79,7 +82,7 @@ function InputForm({ cardState, setCardState }) {
       card[name] = value;
     }
 
-    setCardState(card);
+    setCardDetails(card);
   };
 
   // TO DO: save current card to 'Collection' tab

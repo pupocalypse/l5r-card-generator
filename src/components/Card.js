@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { CardContext } from "../App";
 import CardPhoto from "./CardPhoto";
 
-function Card({ cardState }) {
+function Card() {
+  const { cardDetails } = useContext(CardContext);
   const {
     name,
     nameTitle,
@@ -10,13 +13,17 @@ function Card({ cardState }) {
     titles,
     keywords,
     quote,
-  } = cardState;
+  } = cardDetails;
 
   const keywordsList = keywords.map((keyword, index) => (
     <li key={index}>{keyword}</li>
   ));
 
   const titlesString = titles.join(` | `);
+
+  const experiencedString = experienced
+    ? `Experienced${(expLevel > 1 && ` ${expLevel}`) || ""} | ${titlesString}`
+    : titlesString;
 
   const nameScrollText = () => {
     return !nameTitle ? (
@@ -39,7 +46,7 @@ function Card({ cardState }) {
       </div>
 
       {/* image & status banner section */}
-      <CardPhoto cardState={cardState}>
+      <CardPhoto>
         <div className="card__status-banner">
           <div className="card__status-banner-backdrop"></div>
         </div>
@@ -60,13 +67,7 @@ function Card({ cardState }) {
         </div>
         <div className="card__scroll-backdrop">
           <div className="card__scroll-inner-text">
-            <h3 className="card__scroll-heading-text">
-              {experienced
-                ? `Experienced${
-                    (expLevel > 1 && ` ${expLevel}`) || ""
-                  } | ${titlesString}`
-                : titlesString}
-            </h3>
+            <h3 className="card__scroll-heading-text">{experiencedString}</h3>
             <ul className="card__scroll-list">{keywordsList}</ul>
             <p className="card__scroll-quote">{quote}</p>
           </div>

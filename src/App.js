@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, createContext, useMemo } from "react";
 import Card from "./components/Card";
-// import InputForm from "./components/InputForm";
 import FormContainer from "./components/FormContainer";
 
+export const CardContext = createContext({
+  cardDetails: {},
+  setCardDetails: () => {},
+});
+
 function App() {
-  const [cardState, setCardState] = useState({
+  const [cardDetails, setCardDetails] = useState({
     name: "Lastname Firstname",
     nameTitle: "",
     clan: "unaligned",
@@ -15,17 +19,21 @@ function App() {
     quote:
       "Optional quote from this character that probably takes up a couple of lines and maybe, just maybe, a third one as well?",
     photo: {
-      original: "",
-      cropped: null,
       filename: "",
       position: {
-        startX: 0,
-        startY: 0,
-        newX: 0,
-        newY: 0,
+        top: 0,
+        left: 0,
       },
+      scale: 120,
     },
   });
+  const context = useMemo(
+    () => ({ cardDetails, setCardDetails }),
+    [cardDetails]
+  );
+
+  // TO DO: useEffect for mounting that reads localStorage for saved and last
+  // modified character and updates cardState appropriately
 
   return (
     <div className="App">
@@ -35,25 +43,10 @@ function App() {
 
       <main>
         <div className="card-form">
-          <Card cardState={cardState} />
-          {/* <section className="form-container"> */}
-          <FormContainer cardState={cardState} setCardState={setCardState} />
-          {/* <nav className="form-container__nav">
-              <button
-                className="form-container__tab form-container__tab--active button"
-                onClick={setActiveTab}
-              >
-                Details
-              </button>
-              <button className="form-container__tab" onClick={setActiveTab}>
-                Upload Artwork
-              </button>
-              <button className="form-container__tab" onClick={setActiveTab}>
-                Collection
-              </button>
-            </nav>
-            <InputForm cardState={cardState} setCardState={setCardState} />
-          </section> */}
+          <CardContext.Provider value={context}>
+            <Card />
+            <FormContainer />
+          </CardContext.Provider>
         </div>
       </main>
 

@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { CardContext } from "../App";
+
 function CardPhoto({ cardState, children }) {
-  if (cardState?.photo?.cropped) {
-    const photoStyle = { backgroundImage: `url(${cardState.photo.cropped})` };
+  const { cardDetails } = useContext(CardContext);
+  if (cardDetails?.photo?.cropped) {
+    const photoStyle = { backgroundImage: `url(${cardDetails.photo.cropped})` };
 
     return (
       <div className="card__image" style={photoStyle}>
