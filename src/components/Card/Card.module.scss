@@ -1,0 +1,94 @@
+@use 'sass:color';
+
+@import '../../styles/partials/variables';
+@import '../../styles/partials/colours';
+@import '../../styles/partials/mixins';
+
+.card {
+	@include clan-colours();
+
+	width: $card-print-width;
+	height: $card-print-height;
+	background: black;
+	padding: $card-print-padding;
+	border-radius: $card-print-border-radius;
+	position: relative;
+
+	/* bleed */
+	&::before {
+		content: "";
+		width: calc($card-print-width + ($card-bleed-size * 2));
+		height: calc($card-print-height + ($card-bleed-size * 2));
+		background: black;
+		position: absolute;
+		z-index: -1;
+		top: calc($card-print-padding * -1);
+		left: calc($card-print-padding * -1);
+	}
+
+	/* crop boundary, for visual aid */
+	&::after {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		border-radius: $card-print-border-radius;
+		border: 1px solid cyan;
+		top: 0;
+		left: 0;
+
+		/* hide crop boundary when printing */
+		@media print {
+			content: unset;
+		}
+	}
+}
+
+.image {
+	/* width: calc(100% - 0.5in); */
+	height: 51%;
+	background: color.adjust(whitesmoke, $lightness: -10%);
+	background: linear-gradient(to bottom, rgba(black, 0.2), rgba(black, 0.6)),
+		url("../../assets/images/noface_samurai.png");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	top: -0.5%;
+}
+
+/* CLAN COLOURS */
+.crab {
+	@include clan-colours($crab)
+}
+
+.crane {
+	@include clan-colours($crane)
+}
+
+.dragon {
+	@include clan-colours($dragon)
+}
+
+.lion {
+	@include clan-colours($lion)
+}
+
+.mantis {
+	@include clan-colours($mantis)
+}
+
+.phoenix {
+	@include clan-colours($phoenix)
+}
+
+.scorpion {
+	@include clan-colours($scorpion)
+}
+
+.spider {
+	@include clan-colours($spider)
+}
+
+.unicorn {
+	@include clan-colours($unicorn)
+}

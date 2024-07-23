@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+@mixin clan-colours ($colour: 'unaligned') {
+    @if $colour !='unaligned' {
+        --scroll-base: #{map.get($colour, "scroll-base")};
+        --scroll-secondary: #{map.get($colour, "scroll-secondary")};
+        --scroll-highlight: #{map.get($colour, "scroll-highlight")};
+        --scroll-shade-1: #{map.get($colour, "scroll-shade-1")};
+        --scroll-shade-2: #{map.get($colour, "scroll-shade-2")};
+        --scroll-shade-3: #{map.get($colour, "scroll-shade-3")};
+        --scroll-shade-4: #{map.get($colour, "scroll-shade-4")};
+        --scroll-shade-5: #{map.get($colour, "scroll-shade-5")};
+        --scroll-shade-6: #{map.get($colour, "scroll-shade-6")};
+        --scroll-shade-rgb: #{map.get($colour, "scroll-shade-rgb")};
+
+        --underlay-base: #{map.get($colour, "underlay-base")};
+        --underlay-secondary: #{map.get($colour, "underlay-secondary")};
+        --underlay-highlight: #{map.get($colour, "underlay-highlight")};
+        --underlay-shade-1: #{map.get($colour, "underlay-shade-1")};
+        --underlay-shade-2: #{map.get($colour, "underlay-shade-2")};
+    }
+
+    @else {
+        --scroll-base: #{$scroll-base};
+        --scroll-highlight: #{$scroll-highlight};
+        --scroll-shade-1: #{$scroll-shade-1};
+        --scroll-shade-2: #{$scroll-shade-2};
+        --scroll-shade-3: #{$scroll-shade-3};
+        --scroll-shade-4: #{$scroll-shade-4};
+        --scroll-shade-5: #{$scroll-shade-5};
+        --scroll-shade-6: #{$scroll-shade-6};
+        --scroll-shade-rgb: #{$scroll-shade-rgb};
+
+        --underlay-base: #{$underlay-base};
+        --underlay-secondary: #{$underlay-secondary};
+        --underlay-highlight: #{$underlay-highlight};
+        --underlay-shade-1: #{$underlay-shade-1};
+        --underlay-shade-2: #{$underlay-shade-2};
+    }
+}

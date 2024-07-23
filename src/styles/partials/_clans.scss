@@ -1,0 +1,254 @@
+@use 'sass:map';
+@use 'sass:color';
+
+// UNALIGNED (default)
+$scroll-base: #885445;
+// $scroll-secondary: #d4b3a0; // never used -keep for secondary?
+$scroll-highlight: color.adjust($scroll-base, $lightness: 5%);
+$scroll-shade-1: color.adjust($scroll-base, $lightness: -10%);
+$scroll-shade-2: color.adjust($scroll-base, $lightness: -15%);
+$scroll-shade-3: color.adjust($scroll-base, $lightness: -20%);
+$scroll-shade-4: color.adjust($scroll-base, $lightness: -30%);
+$scroll-shade-5: color.adjust($scroll-base, $lightness: -40%);
+$scroll-shade-6: color.adjust($scroll-base, $lightness: -50%);
+$scroll-shade-rgb: red($scroll-shade-5) green($scroll-shade-5) blue($scroll-shade-5);
+
+$underlay-base: #6e4a2c;
+$underlay-secondary: #b98c63;
+$underlay-highlight: color.adjust($underlay-secondary, $lightness: 20%);
+$underlay-shade-1: color.adjust($underlay-base, $lightness: -20%);
+$underlay-shade-2: color.adjust($underlay-base, $lightness: -40%);
+
+// CRAB
+$crab-scroll-base: #2850a0;
+// $crab-scroll-secondary: #73bbff;
+$crab-scroll-shade: color.adjust($crab-scroll-base, $lightness: -40%);
+$crab-underlay-base: #43666b;
+$crab-underlay-secondary: #87a8b1;
+
+$crab: (
+    "scroll-base": $crab-scroll-base,
+    // "scroll-secondary": $crab-scroll-secondary,
+    "scroll-highlight": color.adjust($crab-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($crab-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($crab-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($crab-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($crab-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($crab-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($crab-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($crab-scroll-shade) green($crab-scroll-shade) blue($crab-scroll-shade),
+
+    "underlay-base": $crab-underlay-base,
+    "underlay-secondary": $crab-underlay-secondary,
+    "underlay-highlight": color.adjust($crab-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($crab-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($crab-underlay-base, $lightness: -40%)
+);
+
+// CRANE
+$crane-scroll-base: #7bc3da;
+// $crane-scroll-secondary: #9ce7fd,
+$crane-scroll-shade: color.adjust($crane-scroll-base, $lightness: -40%);
+$crane-underlay-base: #7395b6;
+$crane-underlay-secondary: #d0e4f4;
+
+$crane: (
+    "scroll-base": $crane-scroll-base,
+    // "scroll-secondary": $crane-scroll-secondary,
+    "scroll-highlight": color.adjust($crane-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($crane-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($crane-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($crane-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($crane-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($crane-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($crane-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($crane-scroll-shade) green($crane-scroll-shade) blue($crane-scroll-shade),
+
+    "underlay-base": $crane-underlay-base,
+    "underlay-secondary":$crane-underlay-secondary,
+    "underlay-highlight": color.adjust($crane-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($crane-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($crane-underlay-base, $lightness: -40%)
+);
+
+// DRAGON
+$dragon-scroll-base: #cccf1e;
+// $dragon-scroll-secondary: #f8eb5d,
+$dragon-scroll-shade: color.adjust($dragon-scroll-base, $lightness: -40%);
+$dragon-underlay-base: #517e46;
+$dragon-underlay-secondary: #b3db8d;
+
+$dragon: (
+    "scroll-base": $dragon-scroll-base,
+    // "scroll-secondary": #dragon-scroll-secondary,
+    "scroll-highlight": color.adjust($dragon-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($dragon-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($dragon-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($dragon-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($dragon-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($dragon-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($dragon-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($dragon-scroll-shade) green($dragon-scroll-shade) blue($dragon-scroll-shade),
+
+    "underlay-base": $dragon-underlay-base,
+    "underlay-secondary": $dragon-underlay-secondary,
+    "underlay-highlight": color.adjust($dragon-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($dragon-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($dragon-underlay-base, $lightness: -40%),
+);
+
+// LION
+$lion-scroll-base: #b88343;
+// $lion-scroll-secondary: #eec984,
+$lion-scroll-shade: color.adjust($lion-scroll-base, $lightness: -40%);
+$lion-underlay-base: #a57d3e;
+$lion-underlay-secondary: #ffdd6f;
+
+$lion: (
+    "scroll-base": $lion-scroll-base,
+    // "scroll-secondary": $lion-scroll-secondary,
+    "scroll-highlight": color.adjust($lion-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($lion-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($lion-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($lion-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($lion-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($lion-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($lion-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($lion-scroll-shade) green($lion-scroll-shade) blue($lion-scroll-shade),
+
+    "underlay-base": $lion-underlay-base,
+    "underlay-secondary":$lion-underlay-secondary,
+    "underlay-highlight": color.adjust($lion-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($lion-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($lion-underlay-base, $lightness: -40%),
+);
+
+// MANTIS
+$mantis-scroll-base: #1ca05e;
+// $mantis-scroll-secondary: #91f5b7,
+$mantis-scroll-shade: color.adjust($mantis-scroll-base, $lightness: -40%);
+$mantis-underlay-base: #053945;
+$mantis-underlay-secondary: #1f97a0;
+
+$mantis: (
+    "scroll-base": $mantis-scroll-base,
+    // "scroll-secondary": #mantis-scroll-secondary,
+    "scroll-highlight": color.adjust($mantis-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($mantis-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($mantis-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($mantis-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($mantis-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($mantis-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($mantis-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($mantis-scroll-shade) green($mantis-scroll-shade) blue($mantis-scroll-shade),
+
+    "underlay-base": $mantis-underlay-base,
+    "underlay-secondary": $mantis-underlay-secondary,
+    "underlay-highlight": color.adjust($mantis-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($mantis-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($mantis-underlay-base, $lightness: -40%),
+);
+
+// PHOENIX
+$phoenix-scroll-base: #e47317;
+// $phoenix-scroll-secondary: #ffac68,
+$phoenix-scroll-shade: color.adjust($phoenix-scroll-base, $lightness: -40%);
+$phoenix-underlay-base: #e2a447;
+$phoenix-underlay-secondary: #ffdc91;
+
+$phoenix: (
+    "scroll-base": $phoenix-scroll-base,
+    // "scroll-secondary": #phoenix-scroll-secondary,
+    "scroll-highlight": color.adjust($phoenix-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($phoenix-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($phoenix-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($phoenix-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($phoenix-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($phoenix-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($phoenix-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($phoenix-scroll-shade) green($phoenix-scroll-shade) blue($phoenix-scroll-shade),
+
+    "underlay-base": $phoenix-underlay-base,
+    "underlay-secondary": $phoenix-underlay-secondary,
+    "underlay-highlight": color.adjust($phoenix-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($phoenix-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($phoenix-underlay-base, $lightness: -40%),
+);
+
+// SCORPION
+$scorpion-scroll-base: #b8171c;
+// $scorpion-scroll-secondary: #ff737a,
+$scorpion-scroll-shade: color.adjust($scorpion-scroll-base, $lightness: -40%);
+$scorpion-underlay-base: #471966;
+$scorpion-underlay-secondary: #5b26b1;
+
+$scorpion: (
+    "scroll-base": $scorpion-scroll-base,
+    // "scroll-secondary": #scorpion-scroll-secondary,
+    "scroll-highlight": color.adjust($scorpion-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($scorpion-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($scorpion-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($scorpion-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($scorpion-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($scorpion-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($scorpion-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($scorpion-scroll-shade) green($scorpion-scroll-shade) blue($scorpion-scroll-shade),
+
+    "underlay-base": $scorpion-underlay-base,
+    "underlay-secondary": $scorpion-underlay-secondary,
+    "underlay-highlight": color.adjust($scorpion-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($scorpion-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($scorpion-underlay-base, $lightness: -40%),
+);
+
+// SPIDER
+$spider-scroll-base: #918f8f;
+// $spider-scroll-secondary: #ebeeec,
+$spider-scroll-shade: color.adjust($spider-scroll-base, $lightness: -40%);
+$spider-underlay-base: #9a9995;
+$spider-underlay-secondary: #f9f3f3;
+
+$spider: (
+    "scroll-base": $spider-scroll-base,
+    // "scroll-secondary": #spider-scroll-secondary,
+    "scroll-highlight": color.adjust($spider-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($spider-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($spider-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($spider-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($spider-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($spider-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($spider-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($spider-scroll-shade) green($spider-scroll-shade) blue($spider-scroll-shade),
+
+    "underlay-base": $spider-underlay-base,
+    "underlay-secondary": $spider-underlay-secondary,
+    "underlay-highlight": color.adjust($spider-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($spider-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($spider-underlay-base, $lightness: -40%),
+);
+
+// UNICORN
+$unicorn-scroll-base: #815dc2;
+// $unicorn-scroll-secondary: #d1befd,
+$unicorn-scroll-shade: color.adjust($unicorn-scroll-base, $lightness: -40%);
+$unicorn-underlay-base: #a54d64;
+$unicorn-underlay-secondary: #d677aa;
+
+$unicorn: (
+    "scroll-base": $unicorn-scroll-base,
+    // "scroll-secondary": #unicorn-scroll-secondary,
+    "scroll-highlight": color.adjust($unicorn-scroll-base, $lightness: 5%),
+    "scroll-shade-1": color.adjust($unicorn-scroll-base, $lightness: -10%),
+    "scroll-shade-2": color.adjust($unicorn-scroll-base, $lightness: -15%),
+    "scroll-shade-3": color.adjust($unicorn-scroll-base, $lightness: -20%),
+    "scroll-shade-4": color.adjust($unicorn-scroll-base, $lightness: -30%),
+    "scroll-shade-5": color.adjust($unicorn-scroll-base, $lightness: -40%),
+    "scroll-shade-6": color.adjust($unicorn-scroll-base, $lightness: -50%),
+    "scroll-shade-rgb": red($unicorn-scroll-shade) green($unicorn-scroll-shade) blue($unicorn-scroll-shade),
+
+    "underlay-base": $unicorn-underlay-base,
+    "underlay-secondary": $unicorn-underlay-secondary,
+    "underlay-highlight": color.adjust($unicorn-underlay-secondary, $lightness: 20%),
+    "underlay-shade-1": color.adjust($unicorn-underlay-base, $lightness: -20%),
+    "underlay-shade-2": color.adjust($unicorn-underlay-base, $lightness: -40%),
+);
