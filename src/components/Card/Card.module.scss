@@ -10,6 +10,8 @@
 	width: $card-print-width;
 	height: $card-print-height;
 	background: black;
+	color: black;
+	text-align: center;
 	padding: $card-print-padding;
 	border-radius: $card-print-border-radius;
 	position: relative;
@@ -17,8 +19,8 @@
 	/* bleed */
 	&::before {
 		content: "";
-		width: calc($card-print-width + ($card-bleed-size * 2));
-		height: calc($card-print-height + ($card-bleed-size * 2));
+		width: calc($card-print-width + $card-bleed-size);
+		height: calc($card-print-height + $card-bleed-size);
 		background: black;
 		position: absolute;
 		z-index: -1;

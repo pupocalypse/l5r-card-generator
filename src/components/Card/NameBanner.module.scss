@@ -1,5 +1,7 @@
 @use 'sass:color';
 
+@import '../../styles/partials/variables';
+
 .banner {
     display: flex;
     flex-direction: row;
@@ -65,10 +67,24 @@
 }
 
 .text {
-    font-family: "Present Condensed";
+    width: 100%;
+    font-family: $font_brush_legacy;
     font-size: 1.125rem;
     font-weight: normal;
     padding-top: 0.25rem;
+}
+
+// if name banner includes a title, break up the text
+.text:has(+ .text) {
+    font-size: 1rem;
+    padding-top: 0.125rem;
+    line-height: 1;
+}
+
+.text+.text {
+    font-size: 0.75rem;
+    margin-top: -0.75rem;
+    line-height: 1;
 }
 
 .end {

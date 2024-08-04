@@ -1,0 +1,59 @@
+// character names (modern)
+@font-face {
+    font-family: 'BrushTip Texe';
+    src: url('src/assets/fonts/BrushtipTexe.woff2') format('woff2'),
+        url('src/assets/fonts/BrushtipTexe.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// character names * alt * (legacy)
+@font-face {
+    font-family: 'Present Condensed';
+    src: url('src/assets/fonts/PresentLT-BlackCondensed.woff2') format('woff2'),
+        url('src/assets/fonts/PresentLT-BlackCondensed.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+// card serif
+@font-face {
+    font-family: 'Fontin';
+    src: url('src/assets/fonts/Fontin-Regular.woff2') format('woff2'),
+        url('src/assets/fonts/Fontin-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+// keywords
+@font-face {
+    font-family: 'Fontin';
+    src: url('src/assets/fonts/Fontin-Bold.woff2') format('woff2'),
+        url('src/assets/fonts/Fontin-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+// quote
+@font-face {
+    font-family: 'Fontin';
+    src: url('src/assets/fonts/Fontin-Italic.woff2') format('woff2'),
+        url('src/assets/fonts/Fontin-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+// titles
+@font-face {
+    font-family: 'Fontin Small Caps';
+    src: url('src/assets/fonts/Fontin-SmallCaps.woff2') format('woff2'),
+        url('src/assets/fonts/Fontin-SmallCaps.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
