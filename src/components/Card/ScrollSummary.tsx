@@ -1,4 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
+import classNames from 'classnames';
+
 import styles from './ScrollSummary.module.scss';
 
 const ScrollSummary = () => {
@@ -28,20 +30,14 @@ const ScrollSummary = () => {
 export default memo(ScrollSummary);
 
 const ScrollEnd = ({ placement }: { placement: 'top' | 'bottom' }) => {
-	const outerClasses = useMemo(() => [styles.end, styles[`end--${placement}`]].join(' '), [placement]);
+	const outerClasses = useMemo(() => classNames(styles.end, styles[`end--${placement}`]), [placement]);
 
 	const wrapsClasses = useCallback((wrapPlacement: 'outer' | 'middle') => {
-		return [styles.wraps, styles[`wraps--${wrapPlacement}`]].join(' ');
+		return classNames(styles.wraps, styles[`wraps--${wrapPlacement}`]);
 	}, []);
 
 	const foilsClasses = useCallback((isSkinny = false) => {
-		const base = [styles.foil];
-
-		if (isSkinny) {
-			base.push(styles['foil--skinny']);
-		}
-
-		return base.join(' ');
+		return classNames(styles.foil, { [styles['foil--skinny']]: isSkinny });
 	}, []);
 
 	return (

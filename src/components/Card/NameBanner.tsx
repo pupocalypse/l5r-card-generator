@@ -1,3 +1,6 @@
+import { memo } from 'react';
+import classNames from 'classnames';
+
 import styles from './NameBanner.module.scss';
 
 const NameBanner = () => {
@@ -15,10 +18,10 @@ const NameBanner = () => {
 	);
 };
 
-export default NameBanner;
+export default memo(NameBanner);
 
 const BannerEnd = ({ placement }: { placement: 'left' | 'right' }) => {
-	const classes = [styles.end, styles[`end--${placement}`]].join(' ');
+	const classes = classNames(styles.end, styles[`end--${placement}`]);
 
 	return <div className={classes} />;
 };

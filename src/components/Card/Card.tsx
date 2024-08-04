@@ -1,14 +1,16 @@
-import NameBanner from './NameBanner';
-import ScrollSummary from './ScrollSummary';
+import classNames from 'classnames';
 
 import styles from './Card.module.scss';
 
+import NameBanner from './NameBanner';
+import ScrollSummary from './ScrollSummary';
+
 const Card = () => {
-	const cardStyles = [styles.card];
+	const cardStyles = classNames(styles.card);
 	// tODO: push current selected clan class to `cardStyles`
 
 	return (
-		<div className={cardStyles.join(' ')}>
+		<div className={cardStyles}>
 			<NameBanner />
 			<div className={styles.image} />
 			<ScrollSummary />
