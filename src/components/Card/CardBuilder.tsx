@@ -1,28 +1,37 @@
-import { createContext, useState } from 'react';
-import type { Dispatch, SetStateAction } from 'react';
-import type { MajorClan } from '../../constants/Constants';
 import CardDetails from './CardDetails';
 import CardPreview from './CardPreview';
+import { FormProvider, useForm } from 'react-hook-form';
+import type { CardBuilderFormValues } from '../../validators/schemas/CardBuilderSchemas';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Validators from '../../validators/Validators';
 
 import styles from './CardBuilder.module.scss';
 
-type CardContextValues = {
-	selectedClan: '' | MajorClan;
-	setSelectedClan: Dispatch<SetStateAction<'' | MajorClan>>;
-};
-
-export const CardContext = createContext<CardContextValues>({ selectedClan: '', setSelectedClan: () => {} });
-
 const CardBuilder = () => {
-	const [selectedClan, setSelectedClan] = useState<MajorClan | ''>('');
+	const formMethods = useForm<CardBuilderFormValues>({
+		resolver: zodResolver(Validators.SCHEMAS.schemaCardBuilderForm),
+		defaultValues: {
+			clan: '',
+			family: '',
+			name: '',
+			displayName: '',
+			useDisplayName: false,
+			moniker: '',
+			class: '',
+			job: '',
+			title: '',
+			keywords: [],
+			quote: '',
+		},
+	});
 
 	return (
-		<CardContext.Provider value={{ selectedClan, setSelectedClan }}>
+		<FormProvider {...formMethods}>
 			<div className={styles.wrapper}>
 				<CardPreview />
 				<CardDetails />
 			</div>
-		</CardContext.Provider>
+		</FormProvider>
 	);
 };
 

@@ -1,13 +1,14 @@
-import { useContext } from 'react';
 import classNames from 'classnames';
 import NameBanner from './NameBanner';
 import ScrollSummary from './ScrollSummary';
-import { CardContext } from './CardBuilder';
+import { useFormContext } from 'react-hook-form';
+import type { CardBuilderFormValues } from '../../validators/schemas/CardBuilderSchemas';
 
 import styles from './CardPreview.module.scss';
 
 const CardPreview = () => {
-	const { selectedClan } = useContext(CardContext);
+	const { watch } = useFormContext<CardBuilderFormValues>();
+	const selectedClan = watch('clan');
 
 	const cardStyles = classNames(styles.card, { [styles[selectedClan]]: !!selectedClan });
 

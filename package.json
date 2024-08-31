@@ -14,9 +14,12 @@
 		"ver:major": "npm version major"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^3.9.0",
 		"classnames": "^2.5.1",
 		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"react-dom": "^18.3.1",
+		"react-hook-form": "^7.53.0",
+		"zod": "^3.23.8"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.8.3",
