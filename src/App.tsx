@@ -1,11 +1,15 @@
 import './App.scss';
 
-import Card from './components/Card/Card';
+import CardBuilder from './components/Card/CardBuilder';
 
 function App() {
 	return (
 		<>
-			<Card />
+			{/* <header>header</header> */}
+			<main>
+				<CardBuilder />
+			</main>
+			{/* <footer>footer</footer> */}
 		</>
 	);
 }

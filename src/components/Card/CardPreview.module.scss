@@ -15,6 +15,7 @@
 	padding: $card-print-padding;
 	border-radius: $card-print-border-radius;
 	position: relative;
+	z-index: 1;
 
 	/* bleed */
 	&::before {
